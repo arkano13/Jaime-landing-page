@@ -1,6 +1,6 @@
 # Landing page · Jaime Corrales
 
-Maqueta (v0) del portafolio de conferencias de Jaime Corrales con sección de automatización, construida según el *Manual de Identidad Visual BLC v1.0*.
+Maqueta (v0) de la web de Building Leaders Company: portafolio de conferencias, automatización y apartado del CEO (Jaime Corrales), construida según el *Manual de Identidad Visual BLC v1.0*.
 
 - `index.html` · `styles.css` · `main.js` — HTML/CSS/JS sin dependencias (solo Poppins de Google Fonts).
 - `assets/logos/` — logos extraídos del manual (referencia; reemplazar por los vectoriales de producción).
