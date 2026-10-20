@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaime Corrales · Speaker, Coach & Trainer</title>
+  <meta name="description" content="Conferencias de liderazgo y desarrollo organizacional de Jaime Corrales, con el respaldo de Building Leaders Company.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ENCABEZADO: conferencia = Jaime Corrales lidera; BLC firma en pequeño (manual, p. 9) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Jaime Corrales, inicio">
+        <img src="assets/logos/jc-negro.png" alt="Jaime Corrales · Speaker, Coach & Trainer" width="480" height="414">
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav" class="nav" aria-label="Principal">
+        <a href="#conferencias">Conferencias</a>
+        <a href="#temas">Temas</a>
+        <a href="#automatizacion">Automatización</a>
+        <a href="#sobre">Sobre Jaime</a>
+        <a href="#contacto" class="btn btn-primary btn-sm">Contratar conferencia</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Speaker · Coach · Trainer</p>
+          <h1>El desarrollo de toda organización comienza con el desarrollo de sus líderes.</h1>
+          <p class="lead">Conferencias de liderazgo, desarrollo organizacional y transformación del talento humano, con foco en resultados medibles.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Contratar conferencia</a>
+            <a href="#conferencias" class="btn btn-ghost">Ver portafolio</a>
+          </div>
+        </div>
+        <figure class="hero-photo placeholder" aria-label="Espacio para foto de Jaime Corrales">
+          <span>Foto de Jaime en escenario<br><small>vertical · alta resolución</small></span>
+        </figure>
+      </div>
+
+      <div class="container">
+        <ul class="stats" aria-label="Cifras (pendientes de confirmar)">
+          <li><strong>[00]+</strong><span>Conferencias dictadas</span></li>
+          <li><strong>[00]</strong><span>Países / ciudades</span></li>
+          <li><strong>[00k]</strong><span>Personas impactadas</span></li>
+          <li><strong>[00]</strong><span>Organizaciones</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PORTAFOLIO DE CONFERENCIAS -->
+    <section id="conferencias" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Portafolio</p>
+          <h2>Conferencias dictadas</h2>
+          <p class="section-intro">Una muestra de los escenarios donde Jaime ha compartido su enfoque de liderazgo. Filtra por tema.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filtrar conferencias por tema">
+          <button class="chip is-active" data-filter="todas" aria-pressed="true">Todas</button>
+          <button class="chip" data-filter="liderazgo" aria-pressed="false">Liderazgo</button>
+          <button class="chip" data-filter="organizacional" aria-pressed="false">Desarrollo organizacional</button>
+          <button class="chip" data-filter="talento" aria-pressed="false">Talento humano</button>
+        </div>
+
+        <div class="grid-talks" id="talks"><!-- se llena desde main.js --></div>
+      </div>
+    </section>
+
+    <!-- TEMAS / CONFERENCIAS DISPONIBLES -->
+    <section id="temas" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Para tu evento</p>
+          <h2>Conferencias disponibles</h2>
+        </header>
+        <ol class="topics">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h3>[Título de conferencia 1]</h3>
+              <p>Liderazgo intencional: cómo el líder define la dirección y el ritmo de su equipo.</p>
+              <p class="meta">Keynote · 60–90 min · Presencial / virtual</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h3>[Título de conferencia 2]</h3>
+              <p>Del líder a la organización: procesos que convierten el desarrollo de líderes en resultados medibles.</p>
+              <p class="meta">Conferencia + taller · Medio día</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h3>[Título de conferencia 3]</h3>
+              <p>Transformación del talento humano: equipos que crecen con el negocio.</p>
+              <p class="meta">Keynote · 45–60 min</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div>
+              <h3>[Título de conferencia 4]</h3>
+              <p>Innovación aplicada al liderazgo: herramientas y automatización para el líder actual.</p>
+              <p class="meta">Taller práctico · 2–4 h</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- AUTOMATIZACIÓN (modelo: contenido pendiente del link del cliente) -->
+    <section id="automatizacion" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Innovación aplicada</p>
+          <h2>Automatización para líderes y equipos</h2>
+          <p class="section-intro">Procesos que liberan tiempo del líder para lo que solo él puede hacer: desarrollar a su gente.</p>
+        </header>
+
+        <ol class="flow" aria-label="Cómo trabajamos la automatización">
+          <li><span class="step">1</span><h3>Diagnóstico</h3><p>Identificamos tareas repetitivas del equipo.</p></li>
+          <li><span class="step">2</span><h3>Diseño</h3><p>Definimos el flujo y las herramientas.</p></li>
+          <li><span class="step">3</span><h3>Implementación</h3><p>Ponemos en marcha y capacitamos.</p></li>
+          <li><span class="step">4</span><h3>Medición</h3><p>Reportamos tiempo ahorrado y resultados.</p></li>
+        </ol>
+
+        <div class="grid-auto">
+          <article class="auto-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="16" r="3"/></svg>
+            <h3>[Automatización 1]</h3>
+            <p>Descripción breve del proceso automatizado y el problema que resuelve.</p>
+            <p class="result"><strong>[00 h]</strong> ahorradas al mes</p>
+          </article>
+          <article class="auto-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h4"/></svg>
+            <h3>[Automatización 2]</h3>
+            <p>Descripción breve del proceso automatizado y el problema que resuelve.</p>
+            <p class="result"><strong>[00 %]</strong> menos tareas manuales</p>
+          </article>
+          <article class="auto-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg>
+            <h3>[Automatización 3]</h3>
+            <p>Descripción breve del proceso automatizado y el problema que resuelve.</p>
+            <p class="result"><strong>[00]</strong> equipos usando el flujo</p>
+          </article>
+        </div>
+        <p class="pending-note">Contenido de ejemplo. Se completará con la información del enlace de automatización.</p>
+      </div>
+    </section>
+
+    <!-- SOBRE JAIME -->
+    <section id="sobre" class="section section-alt">
+      <div class="container about-grid">
+        <figure class="about-photo placeholder" aria-label="Espacio para retrato de Jaime Corrales">
+          <span>Retrato de Jaime<br><small>foto real, grande y clara</small></span>
+        </figure>
+        <div>
+          <p class="eyebrow">Sobre Jaime</p>
+          <h2>Jaime Corrales</h2>
+          <p>[Biografía breve: trayectoria, especialidad y por qué sus conferencias generan resultados. 2–3 párrafos cortos.]</p>
+          <p>Fundador de Building Leaders Company, firma especializada en liderazgo, desarrollo organizacional y transformación del talento humano.</p>
+          <ul class="values" aria-label="Valores">
+            <li>Liderazgo Intencional</li>
+            <li>Integridad</li>
+            <li>Excelencia con Evidencia</li>
+            <li>Cercanía</li>
+            <li>Innovación Aplicada</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Testimonios</p>
+          <h2>Lo que dicen los organizadores</h2>
+        </header>
+        <div class="grid-quotes">
+          <blockquote>
+            <p>“[Testimonio real de un organizador o cliente sobre el impacto de la conferencia.]”</p>
+            <footer><strong>[Nombre]</strong><span>[Cargo · Organización]</span></footer>
+          </blockquote>
+          <blockquote>
+            <p>“[Testimonio real de un organizador o cliente sobre el impacto de la conferencia.]”</p>
+            <footer><strong>[Nombre]</strong><span>[Cargo · Organización]</span></footer>
+          </blockquote>
+          <blockquote>
+            <p>“[Testimonio real de un organizador o cliente sobre el impacto de la conferencia.]”</p>
+            <footer><strong>[Nombre]</strong><span>[Cargo · Organización]</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section-alt">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>Llevemos esta conferencia a tu organización</h2>
+          <p>Cuéntanos sobre tu evento y te respondemos con disponibilidad y propuesta.</p>
+          <p class="promise">Fortalecemos líderes. Transformamos organizaciones. Construimos legados.</p>
+        </div>
+        <form class="form" novalidate>
+          <div class="field">
+            <label for="f-nombre">Nombre</label>
+            <input id="f-nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-org">Organización</label>
+            <input id="f-org" name="organizacion" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-email">Correo</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-tipo">Tipo de evento</label>
+              <select id="f-tipo" name="tipo">
+                <option>Conferencia / keynote</option>
+                <option>Taller</option>
+                <option>Automatización</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-fecha">Fecha tentativa</label>
+              <input id="f-fecha" name="fecha" type="date">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Mensaje</label>
+            <textarea id="f-msg" name="mensaje" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/logos/jc-negro.png" alt="Jaime Corrales" class="footer-jc" width="480" height="414">
+      <div class="footer-sign">
+        <span>Con el respaldo de</span>
+        <img src="assets/logos/blc-nombre.png" alt="Building Leaders Company" width="720" height="325">
+      </div>
+      <p class="footer-meta">@jaimecorralesc · © 2026 Building Leaders Company</p>
+    </div>
+  </footer>
+
+  <!-- Detalle de conferencia -->
+  <dialog id="talk-dialog" class="talk-dialog" aria-labelledby="dlg-title">
+    <button class="dlg-close" aria-label="Cerrar detalle">×</button>
+    <div class="dlg-photo placeholder"><span>Galería de fotos del evento</span></div>
+    <div class="dlg-body">
+      <p class="eyebrow" id="dlg-tag"></p>
+      <h3 id="dlg-title"></h3>
+      <p class="meta" id="dlg-meta"></p>
+      <p id="dlg-desc"></p>
+    </div>
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
