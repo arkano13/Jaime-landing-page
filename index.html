@@ -2,35 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Building Leaders Company · Liderazgo y desarrollo organizacional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Building Leaders Company | Liderazgo y desarrollo organizacional</title>
   <meta name="description" content="Conferencias, programas, talleres y procesos de transformación organizacional para desarrollar líderes con resultados medibles. Agende su diagnóstico gratuito.">
-  <meta name="theme-color" content="#024C69">
+  <meta name="theme-color" content="#FBF9F3">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:site_name" content="Building Leaders Company">
   <meta property="og:title" content="Building Leaders Company">
   <meta property="og:description" content="Fortalecemos líderes. Transformamos organizaciones. Construimos legados.">
-  <meta property="og:image" content="assets/logos/blc-nombre.png">
-  <link rel="icon" href="assets/logos/blc.png">
+  <!-- og:image, og:url y canonical requieren el dominio definitivo (URL absoluta) -->
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Building Leaders Company",
+    "alternateName": "BLC",
+    "slogan": "Fortalecemos líderes. Transformamos organizaciones. Construimos legados.",
+    "telephone": "+504 8982-6424",
+    "founder": { "@type": "Person", "name": "Jaime Corrales", "jobTitle": "Fundador y CEO" }
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <span id="top-sentinel" aria-hidden="true"></span>
 
   <header class="site-header">
     <div class="container header-inner">
       <a href="#inicio" class="brand" aria-label="Building Leaders Company, inicio">
         <img src="assets/logos/blc-nombre.png" alt="Building Leaders Company" width="720" height="325">
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav" aria-label="Principal">
         <a href="#soluciones">Soluciones</a>
         <a href="#automatizacion">Automatización</a>
-        <a href="#capacidades">Capacidades</a>
+        <a href="#capacidades">Cómo trabajamos</a>
         <a href="#fundador">Fundador</a>
         <a href="https://wa.me/50489826424" class="btn btn-primary btn-sm" data-wa>Agendar diagnóstico</a>
       </nav>
@@ -39,60 +55,56 @@
 
   <main id="contenido">
 
-    <!-- PORTADA -->
+    <!-- PORTADA: el selector de necesidad es el momento memorable -->
     <section id="inicio" class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <h1>El desarrollo de toda organización comienza con el desarrollo de sus líderes.</h1>
-          <p class="lead">Building Leaders Company diseña e implementa procesos que convierten el desarrollo de líderes en resultados organizacionales medibles.</p>
+          <p class="lead">Diseñamos e implementamos procesos que convierten el desarrollo de líderes en resultados organizacionales medibles.</p>
           <div class="hero-actions">
             <a href="https://wa.me/50489826424" class="btn btn-primary" data-wa>Agendar diagnóstico gratuito</a>
-            <a href="#soluciones" class="btn btn-ghost">Ver las soluciones</a>
           </div>
+          <p class="hero-note">Sin costo. Primero comprendemos su organización; después recomendamos.</p>
         </div>
 
-        <!-- Escala de profundidad: las cinco líneas según el alcance de la intervención -->
-        <figure class="depth" aria-labelledby="depth-cap">
-          <figcaption id="depth-cap" class="depth-title">Cinco soluciones, según la profundidad del desafío</figcaption>
-          <ol class="depth-list">
-            <li style="--w:14%">
-              <a href="#conferencias">
-                <span class="depth-name">Conferencias de Alto Impacto</span>
-                <span class="depth-bar" aria-hidden="true"><i></i></span>
-                <span class="depth-time">60–90 min</span>
-                <span class="depth-what">Inspiran decisiones en un momento.</span>
-              </a>
-            </li>
-            <li style="--w:34%">
-              <a href="#programas">
-                <span class="depth-name">Programas de Desarrollo Ejecutivo</span>
-                <span class="depth-bar" aria-hidden="true"><i></i></span>
-                <span class="depth-time">4–6 h</span>
-                <span class="depth-what">Desarrollan una competencia concreta.</span>
-              </a>
-            </li>
-            <li style="--w:52%">
-              <a href="#talleres">
-                <span class="depth-name">Talleres de Transformación</span>
-                <span class="depth-bar" aria-hidden="true"><i></i></span>
-                <span class="depth-time">6–8 h o 3 sesiones</span>
-                <span class="depth-what">Instalan capacidades, no solo ideas.</span>
-              </a>
-            </li>
-            <li style="--w:100%">
-              <a href="#procesos">
-                <span class="depth-name">Procesos de Transformación Organizacional</span>
-                <span class="depth-bar" aria-hidden="true"><i></i></span>
-                <span class="depth-time">≈ 1 año</span>
-                <span class="depth-what">Transforman a toda la organización.</span>
-              </a>
-            </li>
-          </ol>
-          <a href="#automatizacion" class="depth-cross">
-            <span class="depth-line" aria-hidden="true"></span>
-            <span><strong>Automatización e Inteligencia Dirigida®</strong> se incorpora en cualquiera de ellas cuando el diagnóstico lo determina.</span>
-          </a>
-        </figure>
+        <form class="finder" id="finder" aria-labelledby="finder-title">
+          <h2 id="finder-title" class="finder-title">¿Qué necesita su organización hoy?</h2>
+          <fieldset>
+            <legend class="sr-only">Elija la necesidad que más se parece a la suya</legend>
+            <label class="finder-opt" style="--w:14%">
+              <input type="radio" name="need" value="conferencias">
+              <span class="opt-need">Inspirar a un grupo y abrir la conversación sobre liderazgo</span>
+              <span class="opt-line"><span class="opt-name">Conferencia</span><span class="opt-time">60 a 90 min</span></span>
+              <span class="opt-bar" aria-hidden="true"><i></i></span>
+            </label>
+            <label class="finder-opt" style="--w:32%">
+              <input type="radio" name="need" value="programas">
+              <span class="opt-need">Fortalecer una competencia concreta del equipo</span>
+              <span class="opt-line"><span class="opt-name">Programa</span><span class="opt-time">4 a 6 h</span></span>
+              <span class="opt-bar" aria-hidden="true"><i></i></span>
+            </label>
+            <label class="finder-opt" style="--w:50%">
+              <input type="radio" name="need" value="talleres">
+              <span class="opt-need">Resolver un desafío específico de liderazgo o gestión</span>
+              <span class="opt-line"><span class="opt-name">Taller</span><span class="opt-time">6 a 8 h o 3 sesiones</span></span>
+              <span class="opt-bar" aria-hidden="true"><i></i></span>
+            </label>
+            <label class="finder-opt" style="--w:100%">
+              <input type="radio" name="need" value="procesos">
+              <span class="opt-need">Transformar cómo la organización piensa, decide y crece</span>
+              <span class="opt-line"><span class="opt-name">Proceso de transformación</span><span class="opt-time">cerca de 1 año</span></span>
+              <span class="opt-bar" aria-hidden="true"><i></i></span>
+            </label>
+            <label class="finder-opt finder-opt--cross">
+              <input type="radio" name="need" value="automatizacion">
+              <span class="opt-need">Ganar tiempo y visibilidad con automatización e IA</span>
+              <span class="opt-line"><span class="opt-name">Se integra a cualquiera de las anteriores</span></span>
+            </label>
+          </fieldset>
+          <div class="finder-result" id="finder-result" aria-live="polite">
+            <p class="finder-empty">Elija una opción y le mostramos la solución que corresponde.</p>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -100,26 +112,28 @@
     <section id="soluciones" class="intro-band">
       <div class="container intro-grid">
         <h2>No todas las organizaciones necesitan lo mismo.</h2>
-        <p>Por eso, antes de recomendar una solución, comprendemos la realidad de su organización. El diagnóstico define si corresponde una conferencia, un programa, un taller, un proceso de transformación o una solución de automatización e inteligencia dirigida.</p>
+        <p>Antes de recomendar una solución, comprendemos la realidad de su organización. El diagnóstico define si corresponde una conferencia, un programa, un taller, un proceso de transformación o una solución de automatización e inteligencia dirigida.</p>
       </div>
     </section>
 
     <!-- CONFERENCIAS -->
     <section id="conferencias" class="section">
-      <div class="container line-grid">
+      <div class="container">
         <div class="line-head">
-          <h2>Conferencias de Alto Impacto</h2>
-          <p class="lead-sm">Experiencias diseñadas para inspirar decisiones, fortalecer el liderazgo y generar resultados sostenibles.</p>
-          <p>El cambio sostenible ocurre cuando las personas desarrollan una nueva forma de pensar, liderar y actuar. Más que transmitir conocimientos, estas conferencias generan reflexión, impulsan la acción y se convierten en el punto de partida de procesos de mayor alcance.</p>
-          <dl class="facts">
-            <div><dt>Duración</dt><dd>60 a 90 minutos</dd></div>
-            <div><dt>Modalidad</dt><dd>Presencial · Virtual · Híbrida</dd></div>
-          </dl>
+          <div>
+            <h2>Conferencias de Alto Impacto</h2>
+            <p class="lead-sm">Experiencias diseñadas para inspirar decisiones, fortalecer el liderazgo y generar resultados sostenibles.</p>
+            <p>El cambio sostenible ocurre cuando las personas desarrollan una nueva forma de pensar, liderar y actuar. Más que transmitir conocimientos, estas conferencias generan reflexión, impulsan la acción y se convierten en el punto de partida de procesos de mayor alcance.</p>
+            <dl class="facts">
+              <div><dt>Duración</dt><dd>60 a 90 minutos</dd></div>
+              <div><dt>Modalidad</dt><dd>Presencial, virtual o híbrida</dd></div>
+            </dl>
+          </div>
           <figure class="photo-slot photo-slot--stage" role="img" aria-label="Espacio para foto real de Jaime Corrales en escenario">
             <span>Foto de conferencia<br><small>Jaime en escenario, horizontal</small></span>
           </figure>
         </div>
-        <ul class="offer-list" data-kind="la conferencia">
+        <ul class="offer-list offer-list--two" data-kind="la conferencia">
           <li><h3>Líder Intencional</h3><p>Cómo desarrollar un liderazgo estratégico que inspira personas, fortalece equipos y genera resultados sostenibles.</p></li>
           <li><h3>Desarrolle la Nueva Generación de Líderes</h3><p>Cómo formar líderes que multipliquen el talento y fortalezcan el futuro de la organización.</p></li>
           <li><h3>Es Hora de Actuar</h3><p>Cómo transformar las pérdidas en el impulso para crecer, liderar y avanzar.</p></li>
@@ -135,15 +149,17 @@
     <!-- PROGRAMAS -->
     <section id="programas" class="section section-alt">
       <div class="container">
-        <div class="line-head line-head--wide">
+        <div class="line-head line-head--text">
           <h2>Programas de Desarrollo Ejecutivo</h2>
-          <p class="lead-sm">Experiencias de aprendizaje para desarrollar una competencia concreta —de liderazgo, comunicación, servicio o gestión— con aplicación desde el primer día.</p>
-          <dl class="facts facts--inline">
-            <div><dt>Sesiones</dt><dd>4 a 6 horas</dd></div>
-            <div><dt>Formato</dt><dd>Práctico, participativo, aplicado</dd></div>
-          </dl>
+          <div>
+            <p class="lead-sm">Experiencias de aprendizaje para desarrollar una competencia concreta, de liderazgo, comunicación, servicio o gestión, con aplicación desde el primer día.</p>
+            <dl class="facts">
+              <div><dt>Sesiones</dt><dd>4 a 6 horas</dd></div>
+              <div><dt>Formato</dt><dd>Práctico y participativo</dd></div>
+            </dl>
+          </div>
         </div>
-        <ul class="offer-list offer-list--grid" data-kind="el programa">
+        <ul class="offer-list offer-list--three" data-kind="el programa">
           <li><h3>ADN del Liderazgo</h3><p>Los principios que fortalecen el carácter, la influencia y la efectividad del líder.</p></li>
           <li><h3>Comunicación Estratégica para Líderes</h3><p>Fortalecer la influencia, generar confianza y mejorar los resultados a través de una comunicación efectiva.</p></li>
           <li><h3>Desarrollando Equipos de Alto Desempeño</h3><p>Desarrollar equipos comprometidos, colaborativos y orientados a resultados.</p></li>
@@ -160,37 +176,42 @@
     <!-- TALLERES -->
     <section id="talleres" class="section">
       <div class="container">
-        <div class="line-head line-head--wide">
+        <div class="line-head line-head--text">
           <h2>Talleres de Transformación</h2>
-          <p class="lead-sm">Experiencias de desarrollo ejecutivo diseñadas para instalar capacidades, no solo transmitir ideas.</p>
-          <p>A diferencia de una conferencia —que inspira un momento— un taller aborda un desafío concreto de liderazgo, gestión o desempeño con un modelo estructurado y herramientas de aplicación. El objetivo es salir con mayor claridad y un marco de acción para la realidad del equipo.</p>
-          <dl class="facts facts--inline">
-            <div><dt>Jornada intensiva</dt><dd>6 a 8 horas</dd></div>
-            <div><dt>Aplicación progresiva</dt><dd>3 sesiones de 4 horas</dd></div>
-          </dl>
+          <div>
+            <p class="lead-sm">Experiencias de desarrollo ejecutivo diseñadas para instalar capacidades, no solo transmitir ideas.</p>
+            <p>A diferencia de una conferencia, que inspira un momento, un taller aborda un desafío concreto con un modelo estructurado y herramientas de aplicación, para salir con mayor claridad y un marco de acción para la realidad del equipo.</p>
+            <dl class="facts">
+              <div><dt>Jornada intensiva</dt><dd>6 a 8 horas</dd></div>
+              <div><dt>Aplicación progresiva</dt><dd>3 sesiones de 4 horas</dd></div>
+            </dl>
+          </div>
         </div>
 
         <article class="flagship">
           <div class="flagship-copy">
-            <p class="flagship-tag">La experiencia insignia de Jaime Corrales</p>
             <h3>Liderazgo que Transforma®</h3>
+            <p class="flagship-sub">La experiencia insignia de Jaime Corrales</p>
             <p class="flagship-q">¿Qué distingue a los líderes que inspiran, desarrollan personas y generan resultados extraordinarios?</p>
             <p>Una experiencia que integra cinco competencias esenciales para desarrollar líderes capaces de fortalecer equipos, influir positivamente y generar resultados sostenibles.</p>
             <a class="btn btn-primary" data-wa data-item="el taller Liderazgo que Transforma®" href="https://wa.me/50489826424">Solicitar este taller</a>
           </div>
-          <ol class="competencies" aria-label="Las cinco competencias">
-            <li>Relaciones que construyen confianza</li>
-            <li>Equipos que multiplican resultados</li>
-            <li>Actitudes que impulsan el cambio</li>
-            <li>Liderazgo que desarrolla personas</li>
-            <li>Comunicación que moviliza equipos</li>
-          </ol>
+          <div class="competencies">
+            <p class="competencies-title">Las cinco competencias que integra</p>
+            <ul>
+              <li>Relaciones que construyen confianza</li>
+              <li>Equipos que multiplican resultados</li>
+              <li>Actitudes que impulsan el cambio</li>
+              <li>Liderazgo que desarrolla personas</li>
+              <li>Comunicación que moviliza equipos</li>
+            </ul>
+          </div>
         </article>
 
-        <ul class="offer-list offer-list--grid offer-list--four" data-kind="el taller">
-          <li><h3>Liderazgo con Criterio®</h3><p>Un modelo de cuatro pilares inspirado en los 26 Principios de Oro de John C. Maxwell para decidir y liderar en escenarios complejos.</p></li>
+        <ul class="offer-list offer-list--four" data-kind="el taller">
+          <li><h3>Liderazgo con Criterio®</h3><p>Cuatro pilares inspirados en los 26 Principios de Oro de John C. Maxwell para decidir y liderar en escenarios complejos.</p></li>
           <li><h3>Influencia que Deja Legado®</h3><p>Para líderes de alto nivel que desean ampliar su impacto y formar nuevos líderes que multipliquen esa influencia.</p></li>
-          <li><h3>Equipos que Multiplican Resultados®</h3><p>Un modelo de cuatro pilares para estructurar, coordinar y orientar equipos hacia resultados.</p></li>
+          <li><h3>Equipos que Multiplican Resultados®</h3><p>Cuatro pilares para estructurar, coordinar y orientar equipos hacia resultados.</p></li>
           <li><h3>Decisiones que Definen Resultados®</h3><p>Decidir rápido. Decidir bien. Decidir a tiempo.</p></li>
         </ul>
       </div>
@@ -199,10 +220,12 @@
     <!-- PROCESOS -->
     <section id="procesos" class="section section-alt">
       <div class="container">
-        <div class="line-head line-head--wide">
+        <div class="line-head line-head--text">
           <h2>Procesos de Transformación Organizacional</h2>
-          <p class="lead-sm">Más que desarrollar una habilidad puntual, transformar la forma en que la organización piensa, decide y crece.</p>
-          <p>Un recorrido sostenido de varios meses que combina consultoría, desarrollo directivo, acompañamiento inteligente y automatización para instalar cambios reales en toda la organización.</p>
+          <div>
+            <p class="lead-sm">Más que desarrollar una habilidad puntual, transformar la forma en que la organización piensa, decide y crece.</p>
+            <p>Un recorrido sostenido de varios meses que combina consultoría, desarrollo directivo, acompañamiento inteligente y automatización para instalar cambios reales en toda la organización.</p>
+          </div>
         </div>
         <ul class="process-list" data-kind="el proceso">
           <li>
@@ -231,7 +254,7 @@
             <div>
               <h3>Estrategia Ejecutiva en Acción®</h3>
               <p>Fortalece la capacidad directiva de leer el entorno, decidir con criterio, ejecutar con disciplina y aprender del recorrido.</p>
-              <p class="ref">Referencia: Inversiones Plastikal — Programa de Reestructuración y Escalamiento Empresarial.</p>
+              <p class="ref">Referencia: Inversiones Plastikal, Programa de Reestructuración y Escalamiento Empresarial.</p>
             </div>
           </li>
         </ul>
@@ -243,19 +266,19 @@
       <div class="container">
         <div class="auto-head">
           <h2>Automatización e Inteligencia Dirigida®</h2>
-          <p class="principle">Los sistemas automatizan. Los asistentes acompañan. La inteligencia analiza. <strong>Las personas dirigen.</strong></p>
+          <p class="principle">Los sistemas automatizan. Los asistentes acompañan. La inteligencia analiza. Las personas dirigen.</p>
         </div>
 
         <div class="auto-grid">
           <div class="auto-intro">
             <p class="lead-sm">¿Su organización usa la tecnología para trabajar mejor, o solo para hacer lo mismo más rápido?</p>
             <p>Es la capacidad de BLC para identificar, diseñar e incorporar automatización, asistentes de inteligencia artificial y herramientas de análisis dentro de los procesos, programas y talleres del portafolio. Dónde genera valor real se define en el diagnóstico, no en un catálogo genérico.</p>
-
-            <div class="model" aria-label="El modelo: tres dimensiones">
-              <div class="model-step"><strong>Automatizar</strong><span>Procesos, tareas, reportes y seguimiento que hoy dependen de trabajo manual repetitivo.</span></div>
-              <div class="model-step"><strong>Asistir</strong><span>Asistentes y agentes de IA que apoyan a personas y equipos en su trabajo diario.</span></div>
-              <div class="model-step"><strong>Analizar</strong><span>Información e indicadores para que la dirección decida con mayor criterio.</span></div>
-            </div>
+            <ol class="model" aria-label="El modelo en tres dimensiones">
+              <li><strong>Automatizar</strong><span>Procesos, tareas, reportes y seguimiento que hoy dependen de trabajo manual repetitivo.</span></li>
+              <li><strong>Asistir</strong><span>Asistentes y agentes de IA que apoyan a personas y equipos en su trabajo diario.</span></li>
+              <li><strong>Analizar</strong><span>Información e indicadores para que la dirección decida con mayor criterio.</span></li>
+            </ol>
+            <p class="auto-note">No se contrata como un servicio aparte: se incorpora, cuando el diagnóstico lo determina, dentro de un proceso, un programa o un taller. Ya forma parte de procesos en marcha con organizaciones familiares, comerciales y de distribución en Honduras.</p>
           </div>
 
           <form class="check" id="auto-check" aria-labelledby="check-title">
@@ -276,20 +299,20 @@
             <a class="btn btn-primary check-cta" data-wa data-item="Automatización e Inteligencia Dirigida®" href="https://wa.me/50489826424">Quiero saber si aplica a mi organización</a>
           </form>
         </div>
-
-        <p class="auto-note">No se contrata como un servicio aparte: se incorpora, cuando el diagnóstico lo determina, dentro de un Proceso, un Programa o un Taller de BLC. Ya forma parte de procesos en marcha con organizaciones familiares, comerciales y de distribución en Honduras.</p>
       </div>
     </section>
 
-    <!-- CAPACIDADES -->
+    <!-- CAPACIDADES: es una secuencia real (diagnóstico, evaluación, acompañamiento) -->
     <section id="capacidades" class="section section-alt">
-      <div class="container cap-grid">
-        <div>
-          <h2>Capacidades BLC</h2>
-          <p class="lead-sm">Antes de recomendar una solución, comprendemos la realidad de su organización.</p>
-          <p>Son los recursos de diagnóstico, desarrollo y acompañamiento que sostienen cada una de las cinco soluciones. Nunca se contratan solas: siempre acompañan a una conferencia, un programa, un taller, un proceso o una solución de automatización.</p>
+      <div class="container">
+        <div class="line-head line-head--text">
+          <h2>Cómo trabajamos: Capacidades BLC</h2>
+          <div>
+            <p class="lead-sm">Antes de recomendar una solución, comprendemos la realidad de su organización.</p>
+            <p>Son los recursos de diagnóstico, desarrollo y acompañamiento que sostienen cada una de las cinco soluciones. Nunca se contratan solas: siempre acompañan a una conferencia, un programa, un taller, un proceso o una solución de automatización.</p>
+          </div>
         </div>
-        <ol class="cap-list">
+        <ol class="cap-flow">
           <li>
             <h3>Diagnóstico Empresarial</h3>
             <p class="cap-line">Comprender antes de intervenir.</p>
@@ -333,20 +356,18 @@
     <!-- CIERRE -->
     <section id="contacto" class="closing">
       <div class="container closing-inner">
-        <p class="closing-promise">Fortalecemos líderes. Transformamos organizaciones. Construimos legados.</p>
         <h2>Agende su diagnóstico gratuito</h2>
         <p>Cuéntenos el desafío de su organización y definimos juntos la solución que realmente necesita.</p>
-        <div class="closing-actions">
-          <a class="btn btn-primary" data-wa href="https://wa.me/50489826424">Escribir por WhatsApp</a>
-          <p class="closing-phone">WhatsApp <a href="https://wa.me/50489826424">+504 8982-6424</a></p>
-        </div>
+        <a class="btn btn-primary" data-wa href="https://wa.me/50489826424">Escribir por WhatsApp</a>
+        <p class="closing-phone">o llame al <a href="tel:+50489826424">+504 8982-6424</a></p>
+        <p class="closing-promise">Fortalecemos líderes. Transformamos organizaciones. Construimos legados.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <img src="assets/logos/blc-nombre.png" alt="Building Leaders Company" class="footer-logo" width="720" height="325">
+      <img src="assets/logos/blc-nombre.png" alt="Building Leaders Company" class="footer-logo" width="720" height="325" loading="lazy">
       <nav class="footer-nav" aria-label="Pie de página">
         <a href="#conferencias">Conferencias</a>
         <a href="#programas">Programas</a>
@@ -355,7 +376,8 @@
         <a href="#automatizacion">Automatización</a>
         <a href="#fundador">Fundador</a>
       </nav>
-      <p class="footer-meta">Instagram: Building Leaders Company · WhatsApp +504 8982-6424 · © 2026 Building Leaders Company</p>
+      <p class="footer-meta">WhatsApp <a href="https://wa.me/50489826424">+504 8982-6424</a>. Instagram: Building Leaders Company.</p>
+      <p class="footer-meta footer-copy">© 2026 Building Leaders Company</p>
     </div>
   </footer>
 
