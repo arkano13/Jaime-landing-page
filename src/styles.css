@@ -423,3 +423,4 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .photo-slot img[src*="equipo-graduacion"] { object-position: 50% 70%; }
 .photo-slot img[src*="jaime-libro"] { object-position: 50% 30%; }
 @media (max-width: 900px) { .video-section { grid-template-columns: 1fr; gap: 32px; } }
+.photo-slot img[src*="conferencia-portada"] { object-position: 50% 45%; }
