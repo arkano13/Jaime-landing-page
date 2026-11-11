@@ -1,78 +1,71 @@
-// Datos de ejemplo: reemplazar por las conferencias reales.
-const TALKS = [
-  { tag: 'liderazgo', label: 'Liderazgo', title: '[Nombre de la conferencia]', event: '[Evento]', place: '[Ciudad, País]', year: '[Año]', desc: '[Resumen de la conferencia: tema central, público y resultado para la organización.]' },
-  { tag: 'organizacional', label: 'Desarrollo organizacional', title: '[Nombre de la conferencia]', event: '[Evento]', place: '[Ciudad, País]', year: '[Año]', desc: '[Resumen de la conferencia: tema central, público y resultado para la organización.]' },
-  { tag: 'talento', label: 'Talento humano', title: '[Nombre de la conferencia]', event: '[Evento]', place: '[Ciudad, País]', year: '[Año]', desc: '[Resumen de la conferencia: tema central, público y resultado para la organización.]' },
-  { tag: 'liderazgo', label: 'Liderazgo', title: '[Nombre de la conferencia]', event: '[Evento]', place: '[Ciudad, País]', year: '[Año]', desc: '[Resumen de la conferencia: tema central, público y resultado para la organización.]' },
-  { tag: 'talento', label: 'Talento humano', title: '[Nombre de la conferencia]', event: '[Evento]', place: '[Ciudad, País]', year: '[Año]', desc: '[Resumen de la conferencia: tema central, público y resultado para la organización.]' },
-  { tag: 'organizacional', label: 'Desarrollo organizacional', title: '[Nombre de la conferencia]', event: '[Evento]', place: '[Ciudad, País]', year: '[Año]', desc: '[Resumen de la conferencia: tema central, público y resultado para la organización.]' },
-];
+document.documentElement.classList.add('js');
 
-const grid = document.getElementById('talks');
-grid.innerHTML = TALKS.map((t, i) => `
-  <article class="talk reveal" data-tag="${t.tag}">
-    <div class="placeholder"><span>Foto de la conferencia</span></div>
-    <div class="talk-body">
-      <p class="talk-tag">${t.label}</p>
-      <h3>${t.title}</h3>
-      <p class="meta">${t.event} · ${t.place} · ${t.year}</p>
-      <button class="talk-more" data-index="${i}">Ver detalle</button>
-    </div>
-  </article>`).join('');
+const WA = 'https://wa.me/50489826424';
+const waLink = text => `${WA}?text=${encodeURIComponent(text)}`;
 
-// Filtros
-const chips = document.querySelectorAll('.chip');
-chips.forEach(chip => chip.addEventListener('click', () => {
-  chips.forEach(c => { c.classList.toggle('is-active', c === chip); c.setAttribute('aria-pressed', c === chip); });
-  const f = chip.dataset.filter;
-  grid.querySelectorAll('.talk').forEach(card => { card.hidden = f !== 'todas' && card.dataset.tag !== f; });
-}));
-
-// Detalle
-const dlg = document.getElementById('talk-dialog');
-grid.addEventListener('click', e => {
-  const btn = e.target.closest('.talk-more');
-  if (!btn) return;
-  const t = TALKS[btn.dataset.index];
-  dlg.querySelector('#dlg-tag').textContent = t.label;
-  dlg.querySelector('#dlg-title').textContent = t.title;
-  dlg.querySelector('#dlg-meta').textContent = `${t.event} · ${t.place} · ${t.year}`;
-  dlg.querySelector('#dlg-desc').textContent = t.desc;
-  dlg.showModal();
+// Enlaces de WhatsApp con mensaje según lo que se pide
+document.querySelectorAll('[data-wa]').forEach(a => {
+  const item = a.dataset.item;
+  a.href = waLink(item
+    ? `Hola, quiero información sobre ${item} para mi organización.`
+    : 'Hola, quiero agendar un diagnóstico gratuito con Building Leaders Company.');
+  a.target = '_blank';
+  a.rel = 'noopener';
 });
-dlg.querySelector('.dlg-close').addEventListener('click', () => dlg.close());
-dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+// "Solicitar" en cada conferencia, programa, taller y proceso
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+document.querySelectorAll('[data-kind]').forEach(list => {
+  const kind = list.dataset.kind;
+  list.querySelectorAll(':scope > li').forEach(li => {
+    const title = li.querySelector('h3').textContent;
+    const a = document.createElement('a');
+    a.className = 'ask';
+    a.href = waLink(`Hola, quiero ${kind} "${title}" para mi organización.`);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.innerHTML = `Solicitar por WhatsApp ${arrow}`;
+    a.setAttribute('aria-label', `Solicitar ${kind} ${title} por WhatsApp`);
+    (li.querySelector('div') || li).appendChild(a);
+  });
+});
+
+// Autodiagnóstico de automatización: dos o más situaciones = oportunidad
+const check = document.getElementById('auto-check');
+if (check) {
+  const boxes = check.querySelectorAll('input[type="checkbox"]');
+  const n = document.getElementById('check-n');
+  const msg = document.getElementById('check-msg');
+  const base = msg.textContent;
+  check.addEventListener('change', () => {
+    const count = [...boxes].filter(b => b.checked).length;
+    n.textContent = count;
+    const match = count >= 2;
+    check.classList.toggle('is-match', match);
+    msg.textContent = match
+      ? 'Hay una oportunidad real de automatización e inteligencia dirigida en su organización.'
+      : base;
+  });
+  check.addEventListener('submit', e => e.preventDefault());
+}
+
+// Encabezado: línea inferior al desplazarse
+const header = document.querySelector('.site-header');
+const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
 
 // Menú móvil
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.getElementById('nav');
-toggle.addEventListener('click', () => {
-  const open = nav.classList.toggle('is-open');
+const setMenu = open => {
+  nav.classList.toggle('is-open', open);
   toggle.setAttribute('aria-expanded', open);
   toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  document.body.style.overflow = open ? 'hidden' : '';
+};
+toggle.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
+nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
 });
-nav.addEventListener('click', e => {
-  if (e.target.matches('a')) { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', false); }
-});
-
-// Formulario (maqueta: sin envío real)
-const form = document.querySelector('.form');
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  let ok = true;
-  form.querySelectorAll('[required]').forEach(input => {
-    const valid = input.checkValidity();
-    input.setAttribute('aria-invalid', !valid);
-    if (!valid) ok = false;
-  });
-  form.querySelector('.form-status').textContent = ok
-    ? 'Gracias. Esta es una maqueta: el envío se conectará en la siguiente fase.'
-    : 'Revisa nombre y correo.';
-});
-
-// Revelado suave
-document.querySelectorAll('.section-head, .topics li, .flow li, .auto-card, .grid-quotes blockquote').forEach(el => el.classList.add('reveal'));
-const io = new IntersectionObserver(entries => entries.forEach(en => {
-  if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
-}), { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
