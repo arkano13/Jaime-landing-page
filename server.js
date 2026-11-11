@@ -35,7 +35,7 @@ async function resolveFile(urlPath) {
 }
 
 createServer(async (req, res) => {
-  const { pathname } = new URL(req.url, 'http://localhost');
+  const { pathname, searchParams } = new URL(req.url, 'http://localhost');
   const file = await resolveFile(pathname);
   if (!file) {
     res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
@@ -43,9 +43,19 @@ createServer(async (req, res) => {
     return;
   }
   const ext = extname(file).toLowerCase();
+  // ETag para que el navegador no descargue de nuevo lo que no cambió (respuesta 304)
+  const info = await stat(file);
+  const etag = `W/"${info.size}-${Math.floor(info.mtimeMs)}"`;
+  if (req.headers['if-none-match'] === etag) {
+    res.writeHead(304, { ETag: etag });
+    res.end();
+    return;
+  }
   res.writeHead(200, {
+    ETag: etag,
     'Content-Type': types[ext] || 'application/octet-stream',
-    'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=86400',
+    // Con ?v= (CSS y JS versionados) se guarda un año; lo demás se revalida siempre
+    'Cache-Control': searchParams.has('v') ? 'public, max-age=31536000, immutable' : 'no-cache',
     'X-Content-Type-Options': 'nosniff'
   });
   res.end(await readFile(file));
