@@ -412,3 +412,14 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
   .photo-pair { grid-template-columns: 1fr; }
   .photo-pair .photo-slot { height: 260px; }
 }
+
+/* Videos (verticales) */
+.video-section { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.video-card { margin: 0; }
+.video-card video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--radius); background: var(--petroleo); }
+.video-card figcaption { margin-top: 10px; font-weight: 600; color: var(--petroleo); font-size: .9375rem; }
+.photo-slot--group { aspect-ratio: 1280 / 560; }
+.photo-slot img[src*="equipo-graduacion"] { object-position: 50% 70%; }
+.photo-slot img[src*="jaime-libro"] { object-position: 50% 30%; }
+@media (max-width: 900px) { .video-section { grid-template-columns: 1fr; gap: 32px; } }

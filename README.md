@@ -35,7 +35,9 @@ Coloca los archivos en `src/assets/fotos/` con estos nombres y aparecen solos:
 - `jaime-ceo.jpg` (inicio, conferencias y fundador)
 - `jaime-escenario.jpg` (conferencias y fundador)
 - `conferencia-publico.jpg` (conferencias)
-- `libro-lider-intencional.jpg` (fundador)
+- `libro-lider-intencional.jpg` (tarjeta del libro en el inicio)
+
+Videos en `src/assets/videos/` (MP4 H.264 con su póster `.jpg`).
 
 Mientras no existan, se ve un recuadro que indica qué foto va.
 

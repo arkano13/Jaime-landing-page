@@ -1,6 +1,7 @@
 // Servidor estático para Railway y para verlo en local. Sin dependencias.
 // Railway asigna el puerto en la variable PORT; en local usa 3000.
 import { createServer } from 'node:http';
+import { createReadStream } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,6 +19,8 @@ const types = {
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
   '.txt': 'text/plain; charset=utf-8'
 };
 
@@ -51,7 +54,28 @@ createServer(async (req, res) => {
     res.end();
     return;
   }
+  // Videos: respuestas parciales (Range), necesarias para reproducir en iPhone y Safari
+  const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+  if (range && (ext === '.mp4' || ext === '.webm')) {
+    const start = range[1] ? Number(range[1]) : Math.max(0, info.size - Number(range[2]));
+    const end = range[1] && range[2] ? Math.min(Number(range[2]), info.size - 1) : info.size - 1;
+    if (start > end || start >= info.size) {
+      res.writeHead(416, { 'Content-Range': `bytes */${info.size}` });
+      res.end();
+      return;
+    }
+    res.writeHead(206, {
+      'Content-Type': types[ext],
+      'Content-Range': `bytes ${start}-${end}/${info.size}`,
+      'Content-Length': end - start + 1,
+      'Accept-Ranges': 'bytes',
+      'Cache-Control': 'public, max-age=86400'
+    });
+    createReadStream(file, { start, end }).pipe(res);
+    return;
+  }
   res.writeHead(200, {
+    'Accept-Ranges': 'bytes',
     ETag: etag,
     'Content-Type': types[ext] || 'application/octet-stream',
     // Con ?v= (CSS y JS versionados) se guarda un año; lo demás se revalida siempre

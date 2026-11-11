@@ -10,3 +10,5 @@ Recomendado: JPG de al menos 1600 px de ancho, menos de 400 KB.
   jaime-perfil.jpg
   taller-equipo.jpg
   sesion-sala.jpg
+  equipo-graduacion.jpg
+  jaime-libro.jpg
