@@ -115,3 +115,47 @@ nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
 });
+
+// Conferencias: "Solicitar esta conferencia" preselecciona el tema en el formulario
+document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => {
+  const sel = document.getElementById('r-conf');
+  if (sel) sel.value = a.dataset.pick;
+}));
+
+// Formulario de solicitud: valida y abre WhatsApp con el mensaje armado
+const request = document.getElementById('request');
+if (request) {
+  const showErr = (input, bad) => {
+    input.setAttribute('aria-invalid', bad);
+    const err = document.getElementById(input.getAttribute('aria-describedby'));
+    if (err) err.hidden = !bad;
+  };
+  request.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = request.elements;
+    const checks = [f.nombre, f.organizacion].map(i => { const bad = !i.value.trim(); showErr(i, bad); return bad ? i : null; });
+    const emailBad = f.correo.value.trim() !== '' && !f.correo.checkValidity();
+    showErr(f.correo, emailBad);
+    const first = [...checks, emailBad ? f.correo : null].find(Boolean);
+    if (first) { first.focus(); return; }
+    const lines = [
+      'Hola, quiero solicitar una conferencia con Building Leaders Company.',
+      `Nombre: ${f.nombre.value.trim()}`,
+      `Organización: ${f.organizacion.value.trim()}`,
+      f.correo.value.trim() && `Correo: ${f.correo.value.trim()}`,
+      f.telefono.value.trim() && `Teléfono: ${f.telefono.value.trim()}`,
+      `Conferencia: ${f.conferencia.value}`,
+      f.fecha.value && `Fecha tentativa: ${f.fecha.value}`,
+      f.lugar.value.trim() && `Lugar: ${f.lugar.value.trim()}`,
+      `Modalidad: ${f.modalidad.value}`,
+      f.descripcion.value.trim() && `Sobre el evento: ${f.descripcion.value.trim()}`
+    ].filter(Boolean);
+    window.open(waLink(lines.join('\n')), '_blank', 'noopener');
+  });
+  request.addEventListener('input', e => {
+    if (e.target.getAttribute('aria-invalid') === 'true') {
+      const ok = e.target.type === 'email' ? (e.target.value === '' || e.target.checkValidity()) : e.target.value.trim() !== '';
+      if (ok) showErr(e.target, false);
+    }
+  });
+}
