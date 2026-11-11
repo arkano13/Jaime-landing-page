@@ -1,11 +1,44 @@
 # Sitio web · Building Leaders Company
 
-Página principal de BLC con el contenido aprobado del cliente (paquete "sitio-web", octubre 2026) y el *Manual de Identidad Visual BLC v1.0*.
+Sitio de BLC hecho con HTML, CSS y JavaScript propios: sin WordPress, sin plugins y sin licencias de pago. La organización visual toma como referencia el sitio de Margarita Pasos y respeta el *Manual de Identidad Visual BLC v1.0*.
 
-- `index.html` (inicio) · `conferencias.html` (8 conferencias y solicitud) · `fundador.html` (Jaime Corrales, Fundador y CEO) · `styles.css` · `main.js`: HTML/CSS/JS sin dependencias (solo Poppins de Google Fonts).
-- Secciones: portada con selector "¿Qué necesita su organización hoy?" que recomienda la solución, Conferencias de Alto Impacto, Programas de Desarrollo Ejecutivo, Talleres de Transformación, Procesos de Transformación Organizacional, Automatización e Inteligencia Dirigida® (con autodiagnóstico), Capacidades BLC, Fundador y cierre.
-- Cada solución abre WhatsApp (+504 8982-6424) con un mensaje que nombra lo que se solicita.
-- `assets/logos/`: logos extraídos del manual (reemplazar por los vectoriales de producción).
-- `preview/`: capturas de escritorio (1440 px) y móvil (390 px).
+## Páginas
 
-Pendiente: fotos reales (Jaime en escenario y retrato), usuario exacto de Instagram, páginas de detalle de cada solución.
+| Ruta | Archivo | Contenido |
+|---|---|---|
+| `/` | `src/index.html` | Inicio: portada, credenciales, soluciones, ruta, cómo trabajamos, automatización, testimonios, fundador |
+| `/conferencias` | `src/conferencias.html` | Las 8 conferencias y formulario de solicitud (abre WhatsApp) |
+| `/fundador` | `src/fundador.html` | ¿Quién es Jaime Corrales? |
+
+Encabezado y pie se editan una sola vez en `src/partials/`. Estilos en `src/styles.css`, interacción en `src/main.js`.
+
+## Verlo en tu computadora
+
+Requiere [Node.js](https://nodejs.org) 18 o superior (gratis).
+
+```bash
+npm start
+```
+
+Abre `http://localhost:3000`. El comando arma el sitio en `dist/` y lo sirve.
+
+## Publicar en Railway
+
+1. En Railway: **New Project → Deploy from GitHub repo** y elige este repositorio y la rama.
+2. Railway detecta Node.js y ejecuta `npm start` solo. No hace falta configurar nada más: el servidor usa el puerto que Railway asigna (`PORT`).
+3. En **Settings → Networking → Generate Domain** obtienes la dirección pública. Ahí mismo se conecta el dominio propio.
+
+## Fotos
+
+Coloca los archivos en `src/assets/fotos/` con estos nombres y aparecen solos:
+
+- `jaime-ceo.jpg` (inicio, conferencias y fundador)
+- `jaime-escenario.jpg` (conferencias y fundador)
+- `conferencia-publico.jpg` (conferencias)
+- `libro-lider-intencional.jpg` (fundador)
+
+Mientras no existan, se ve un recuadro que indica qué foto va.
+
+## Pendiente
+
+Testimonios reales, usuario de Instagram, link de compra de conferencias y dominio.

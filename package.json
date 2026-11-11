@@ -1,0 +1,13 @@
+{
+  "name": "blc-sitio-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web de Building Leaders Company",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/build.mjs && node server.js",
+    "dev": "npm start"
+  }
+}
