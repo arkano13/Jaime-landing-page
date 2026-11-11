@@ -398,3 +398,4 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .photo-slot img[src*="taller-grupo"] { object-position: 50% 60%; }
 .photo-slot img[src*="conferencia-publico"] { object-position: 50% 45%; }
 @media (max-width: 600px) { .photo-slot--banner { aspect-ratio: 4 / 3; } }
+.photo-slot img[src*="jaime-diferencia"] { object-position: 58% 30%; }
