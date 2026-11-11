@@ -1,0 +1,6 @@
+Coloque aquí la foto de Jaime Corrales con el nombre exacto:
+
+  jaime-ceo.jpg
+
+Aparece sola en el inicio (sección Fundador) y en fundador.html.
+Recomendado: JPG de al menos 1600 px de ancho, menos de 400 KB.

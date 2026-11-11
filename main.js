@@ -159,3 +159,43 @@ if (request) {
     }
   });
 }
+
+// Pestañas de soluciones (patrón WAI-ARIA: flechas, Inicio y Fin)
+const tabsRoot = document.querySelector('[data-tabs]');
+const showTab = id => {
+  if (!tabsRoot) return false;
+  const tab = tabsRoot.querySelector(`[role="tab"][aria-controls="${id}"]`);
+  if (!tab) return false;
+  tabsRoot.querySelectorAll('[role="tab"]').forEach(t => {
+    const on = t === tab;
+    t.setAttribute('aria-selected', on);
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+  });
+  return tab;
+};
+if (tabsRoot) {
+  const tabs = [...tabsRoot.querySelectorAll('[role="tab"]')];
+  tabs.forEach(t => t.addEventListener('click', () => showTab(t.getAttribute('aria-controls'))));
+  tabsRoot.querySelector('[role="tablist"]').addEventListener('keydown', e => {
+    const i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    const t = tabs[(next + tabs.length) % tabs.length];
+    showTab(t.getAttribute('aria-controls')); t.focus();
+  });
+  showTab(tabs[0].getAttribute('aria-controls'));
+  // Enlaces a #conferencias, #programas, etc. abren su pestaña
+  const openFromHash = () => {
+    const id = location.hash.slice(1);
+    if (id && showTab(id)) document.getElementById('soluciones').scrollIntoView();
+  };
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a && showTab(a.getAttribute('href').slice(1))) { e.preventDefault(); history.pushState(null, '', a.getAttribute('href')); document.getElementById('soluciones').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
+  });
+}
