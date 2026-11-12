@@ -5,7 +5,7 @@ const waLink = text => `${WA}?text=${encodeURIComponent(text)}`;
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Enlaces de WhatsApp con mensaje según lo que se pide
-document.querySelectorAll('[data-wa]').forEach(a => {
+document.querySelectorAll('[data-wa], [data-wa-float]').forEach(a => {
   const item = a.dataset.item;
   a.href = waLink(item
     ? `Hola, quiero información sobre ${item} para mi organización.`
