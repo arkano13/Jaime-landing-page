@@ -427,7 +427,7 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 
 /* Automatización destacada en el menú Soluciones */
 .mega-featured { grid-column: 1 / -1; background: rgba(255, 0, 0, .05); }
-.mega-featured strong { color: var(--rojo) !important; }
+.mega-featured strong { color: #C40000 !important; } /* rojo oscurecido para 4.5:1 en texto pequeño */
 @media (min-width: 1101px) { .topic-bar { grid-template-columns: repeat(var(--cols, 8), 1fr); } }
 .auto-grid--light h2 { color: var(--petroleo); }
 .photo-slot img[src*="programas-portada"] { object-position: 50% 55%; }
@@ -524,3 +524,9 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .legal p { color: var(--texto); }
 .footer-bottom a { color: var(--on-dark); }
 .footer-bottom a:hover { color: var(--blanco); }
+
+/* Accesibilidad: contraste (WCAG AA) */
+/* Rojo #FF0000 con blanco = 4:1 → solo cumple como texto grande: 14pt (18.7px) en negrita */
+.btn-sm { font-size: 1.1875rem; font-weight: 700; }
+/* Turquesa sobre blanco no llega a 4.5:1: los números de las listas van en azul petróleo */
+.numbered .num, .conf-item summary .num { color: var(--petroleo); }
