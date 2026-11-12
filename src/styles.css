@@ -454,3 +454,11 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .diag-form .btn { justify-self: stretch; }
 .diag-note { margin: 0; font-size: .875rem; color: var(--texto-2); text-align: center; }
 @media (max-width: 900px) { .diag-grid { grid-template-columns: 1fr; gap: 40px; } .diag { padding: 40px 0 64px; } }
+
+/* Franja de credenciales con logos */
+.cred-row--logos { align-items: flex-start; }
+.cred-row--logos li { gap: 12px; }
+.cred-row--logos img { height: 92px; width: auto; max-width: 180px; object-fit: contain; }
+.cred-row--logos img[src*="maxwell"] { height: 64px; margin: 14px 0; }
+.cred-row--logos span { font-size: .875rem; font-weight: 500; color: var(--texto-2); max-width: 22ch; }
+@media (max-width: 600px) { .cred-row--logos li { flex-basis: 40%; } .cred-row--logos img { height: 56px; } .cred-row--logos img[src*="maxwell"] { height: 40px; margin: 8px 0; } }
