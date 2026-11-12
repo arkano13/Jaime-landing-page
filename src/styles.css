@@ -433,3 +433,8 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .engine-panel--featured { border-top: 4px solid var(--rojo); }
 @media (min-width: 1101px) { .topic-bar { grid-template-columns: repeat(var(--cols, 8), 1fr); } }
 .auto-grid--light h2 { color: var(--petroleo); }
+.photo-slot img[src*="programas-portada"] { object-position: 50% 55%; }
+.photo-slot img[src*="programas-detalle"] { object-position: 56% 40%; }
+.photo-slot img[src*="procesos-portada"] { object-position: 50% 60%; }
+.photo-slot img[src*="procesos-detalle"] { object-position: 35% 40%; }
+.photo-slot img[src*="talleres-portada"] { object-position: 50% 60%; }
