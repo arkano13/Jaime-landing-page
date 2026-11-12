@@ -486,3 +486,15 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 @media (max-width: 600px) { .conf-detail { padding-left: 0; } .conf-item summary { gap: 14px; } }
 .diag-h { font-size: clamp(2rem, 3.4vw, 2.9rem); color: var(--blanco); line-height: 1.1; }
 .diag .diag-form-title { font-size: 1.25rem; }
+
+/* Testimonios reales */
+.quotes-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.quote-tag { margin: 26px 0 0; font-size: .8125rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-2); }
+.quotes-grid .quote blockquote { margin: 10px 0 20px; flex: none; }
+.quotes-grid .quote blockquote p { font-size: 1.1875rem; font-weight: 500; color: var(--petroleo); line-height: 1.5; }
+.quote-gains { list-style: none; margin: 0 0 20px; padding: 0; }
+.quote-gains li { position: relative; padding: 4px 0 4px 20px; font-size: .9375rem; color: var(--texto-2); }
+.quote-gains li::before { content: ""; position: absolute; left: 0; top: 13px; width: 7px; height: 7px; border-radius: 50%; background: var(--turquesa); }
+.quotes-grid .quote-who { margin-top: auto; }
+.quotes-grid .quote-avatar { display: grid; place-items: center; border: 0; background: var(--petroleo); color: var(--blanco); font-weight: 700; font-size: .9375rem; }
+@media (max-width: 900px) { .quotes-grid { grid-template-columns: 1fr; } }
