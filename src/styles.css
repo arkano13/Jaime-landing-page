@@ -498,3 +498,6 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .quotes-grid .quote-who { margin-top: auto; }
 .quotes-grid .quote-avatar { display: grid; place-items: center; border: 0; background: var(--petroleo); color: var(--blanco); font-weight: 700; font-size: .9375rem; }
 @media (max-width: 900px) { .quotes-grid { grid-template-columns: 1fr; } }
+.carousel .quote blockquote { margin: 10px 0 20px; }
+.carousel .quote blockquote p { font-size: 1.0625rem; font-weight: 500; color: var(--petroleo); line-height: 1.55; }
+.carousel .quote-avatar { display: grid; place-items: center; border: 0; background: var(--petroleo); color: var(--blanco); font-weight: 700; font-size: .9375rem; }
