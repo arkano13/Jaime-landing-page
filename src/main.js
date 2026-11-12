@@ -113,39 +113,31 @@ if (carousel) {
   document.querySelector('[data-carousel-next]').addEventListener('click', () => step(1));
 }
 
-// Formulario de solicitud de conferencia: valida y abre WhatsApp con el mensaje armado
-const request = document.getElementById('request');
-if (request) {
+// Formulario único de diagnóstico: preselecciona la solución (?solucion=) y abre WhatsApp
+const diag = document.getElementById('diag-form');
+if (diag) {
+  const f = diag.elements;
+  const pre = new URLSearchParams(location.search).get('solucion');
+  if (pre && [...f.interes.options].some(o => o.value === pre)) f.interes.value = pre;
   const showErr = (input, bad) => {
     input.setAttribute('aria-invalid', bad);
-    const err = document.getElementById(input.getAttribute('aria-describedby'));
-    if (err) err.hidden = !bad;
+    document.getElementById(input.getAttribute('aria-describedby')).hidden = !bad;
   };
-  request.addEventListener('submit', e => {
+  diag.addEventListener('submit', e => {
     e.preventDefault();
-    const f = request.elements;
     const missing = [f.nombre, f.organizacion].filter(i => { const bad = !i.value.trim(); showErr(i, bad); return bad; });
-    const emailBad = f.correo.value.trim() !== '' && !f.correo.checkValidity();
-    showErr(f.correo, emailBad);
-    const first = missing[0] || (emailBad ? f.correo : null);
-    if (first) { first.focus(); return; }
+    if (missing.length) { missing[0].focus(); return; }
+    const interes = f.interes.value ? f.interes.options[f.interes.selectedIndex].text : 'Quiero una recomendación';
     const lines = [
-      `Hola, quiero solicitar ${request.dataset.kind || 'una conferencia'} con Building Leaders Company.`,
+      'Hola, quiero agendar un diagnóstico gratuito con Building Leaders Company.',
       `Nombre: ${f.nombre.value.trim()}`,
       `Organización: ${f.organizacion.value.trim()}`,
-      f.correo.value.trim() && `Correo: ${f.correo.value.trim()}`,
-      f.telefono.value.trim() && `Teléfono: ${f.telefono.value.trim()}`,
-      `${request.dataset.label || 'Conferencia'}: ${f.conferencia.value}`,
-      f.fecha.value && `Fecha del evento: ${f.fecha.value}`,
-      f.lugar.value.trim() && `Lugar: ${f.lugar.value.trim()}`,
-      `Modalidad: ${f.modalidad.value}`,
-      f.descripcion.value.trim() && `Sobre el evento: ${f.descripcion.value.trim()}`
+      `Me interesa: ${interes}`,
+      f.mensaje.value.trim() && `Desafío: ${f.mensaje.value.trim()}`
     ].filter(Boolean);
     window.open(waLink(lines.join('\n')), '_blank', 'noopener');
   });
-  request.addEventListener('input', e => {
-    if (e.target.getAttribute('aria-invalid') !== 'true') return;
-    const ok = e.target.type === 'email' ? (e.target.value === '' || e.target.checkValidity()) : e.target.value.trim() !== '';
-    if (ok) showErr(e.target, false);
+  diag.addEventListener('input', e => {
+    if (e.target.getAttribute('aria-invalid') === 'true' && e.target.value.trim()) showErr(e.target, false);
   });
 }

@@ -32,7 +32,7 @@
           <h1>Automatización e Inteligencia Dirigida®</h1>
           <p class="hero-lead">Los sistemas automatizan. Los asistentes acompañan. La inteligencia analiza. Las personas dirigen.</p>
           <div class="hero-actions">
-            <a href="#solicitud" class="btn btn-primary">Solicitar información</a>
+            <a href="/diagnostico?solucion=automatizacion" class="btn btn-primary">Agendar diagnóstico</a>
             <a href="#catalogo" class="btn btn-outline-light">Ver dimensiones</a>
           </div>
         </div>
@@ -63,7 +63,7 @@
           <h2>¿Qué es y cómo se activa?</h2>
           <p class="lead-strong">Es la capacidad de BLC para identificar, diseñar e incorporar automatización, asistentes de inteligencia artificial y herramientas de análisis dentro de los procesos, programas y talleres del portafolio.</p>
           <p>No se contrata como un servicio aparte: se incorpora cuando el diagnóstico lo determina. Ya forma parte de procesos en marcha con organizaciones familiares, comerciales y de distribución en Honduras.</p>
-          <a class="text-link" href="#solicitud">Solicitar información</a>
+          <a class="text-link" href="/diagnostico?solucion=automatizacion">Solicitar información</a>
         </div>
       </div>
     </section>
@@ -91,7 +91,7 @@
             <p class="check-count"><span id="check-n">0</span> de 6</p>
             <p id="check-msg">Si te identificas con dos o más, hay una oportunidad real de automatización e inteligencia dirigida en tu organización.</p>
           </div>
-          <a class="btn btn-primary check-cta" href="#solicitud">Quiero saber si aplica a mi organización</a>
+          <a class="btn btn-primary check-cta" href="/diagnostico?solucion=automatizacion">Quiero saber si aplica a mi organización</a>
         </form>
       </div>
     </section>
@@ -103,7 +103,7 @@
           <p class="kicker">Automatización e Inteligencia Dirigida®</p>
           <h2>Las 3 dimensiones</h2>
           <p class="lead-strong">Selecciona la que mejor responda a los desafíos de tu organización.</p>
-          <a class="btn btn-primary" href="#solicitud">Solicitar información</a>
+          <a class="btn btn-primary" href="/diagnostico?solucion=automatizacion">Agendar diagnóstico</a>
         </div>
         <ol class="numbered">
           <li id="c1"><span class="num">01</span><h3>Automatizar</h3></li>
@@ -113,72 +113,14 @@
       </div>
     </section>
 
-    <!-- SOLICITUD -->
-    <section id="solicitud" class="section section-soft">
-      <div class="container request-grid">
+    <!-- CIERRE: un solo paso, el diagnóstico -->
+    <section class="cta-band">
+      <div class="container cta-band-inner">
         <div>
-          <p class="kicker">Solicitud: Automatización e Inteligencia Dirigida®</p>
-          <h2>Lleva esta experiencia a tu organización</h2>
-          <p class="lead-strong">Completa la información de tu evento.</p>
-          <p>Al enviar, se abre WhatsApp con tu solicitud ya escrita, lista para mandarla al +504 8982-6424.</p>
+          <h2>¿Quieres saber si aplica a tu organización?</h2>
+          <p>Agenda tu diagnóstico gratuito. Primero comprendemos tu organización; después recomendamos.</p>
         </div>
-        <form class="request" id="request" novalidate data-kind="Automatización e Inteligencia Dirigida®" data-label="Interés">
-          <div class="field-row">
-            <div class="field">
-              <label for="r-nombre">Nombre completo</label>
-              <input id="r-nombre" name="nombre" autocomplete="name" required aria-describedby="r-nombre-err">
-              <p class="field-err" id="r-nombre-err" hidden>Escribe tu nombre.</p>
-            </div>
-            <div class="field">
-              <label for="r-org">Organización</label>
-              <input id="r-org" name="organizacion" autocomplete="organization" required aria-describedby="r-org-err">
-              <p class="field-err" id="r-org-err" hidden>Escribe el nombre de tu organización.</p>
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="r-email">Correo <span class="opt">(opcional)</span></label>
-              <input id="r-email" name="correo" type="email" autocomplete="email" aria-describedby="r-email-err">
-              <p class="field-err" id="r-email-err" hidden>Revisa el correo: falta una parte, como @ o el dominio.</p>
-            </div>
-            <div class="field">
-              <label for="r-tel">Teléfono <span class="opt">(opcional)</span></label>
-              <input id="r-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
-            </div>
-          </div>
-          <div class="field">
-            <label for="r-conf">¿Dónde te interesa aplicarla?</label>
-            <select id="r-conf" name="conferencia">
-              <option>Aún no lo sé, quiero una recomendación</option>
-              <option>Automatizar</option>
-              <option>Asistir</option>
-              <option>Analizar</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="r-fecha">Fecha del evento <span class="opt">(opcional)</span></label>
-              <input id="r-fecha" name="fecha" type="date">
-            </div>
-            <div class="field">
-              <label for="r-lugar">Lugar del evento <span class="opt">(opcional)</span></label>
-              <input id="r-lugar" name="lugar" autocomplete="address-level2">
-            </div>
-          </div>
-          <fieldset class="field">
-            <legend>Modalidad</legend>
-            <div class="seg">
-              <label><input type="radio" name="modalidad" value="Presencial" checked> Presencial</label>
-              <label><input type="radio" name="modalidad" value="Virtual"> Virtual</label>
-              <label><input type="radio" name="modalidad" value="Híbrida"> Híbrida</label>
-            </div>
-          </fieldset>
-          <div class="field">
-            <label for="r-desc">Descripción del evento <span class="opt">(opcional)</span></label>
-            <textarea id="r-desc" name="descripcion" rows="4" placeholder="Público, número aproximado de asistentes y objetivo del evento"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar solicitud por WhatsApp</button>
-        </form>
+        <a class="btn btn-primary" href="/diagnostico?solucion=automatizacion">Agendar diagnóstico</a>
       </div>
     </section>
   </main>

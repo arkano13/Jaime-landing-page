@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Agenda tu diagnóstico gratuito | Building Leaders Company</title>
+  <meta name="description" content="Agenda tu diagnóstico gratuito con Building Leaders Company. Primero comprendemos tu organización; después recomendamos.">
+  <meta name="theme-color" content="#024C69">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:site_name" content="Building Leaders Company">
+  <meta property="og:title" content="Agenda tu diagnóstico gratuito">
+  <meta property="og:description" content="Primero comprendemos tu organización; después recomendamos.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<!-- include:header -->
+
+  <main id="contenido">
+    <section class="hero hero--dark diag">
+      <div class="container diag-grid">
+        <div class="hero-copy">
+          <p class="kicker">Diagnóstico gratuito</p>
+          <h1>Agenda tu diagnóstico gratuito</h1>
+          <p class="hero-lead">Primero comprendemos la realidad de tu organización; después recomendamos la solución que realmente necesita.</p>
+          <ol class="diag-steps">
+            <li><strong>Nos cuentas tu desafío</strong><span>Completa el formulario: toma menos de un minuto.</span></li>
+            <li><strong>Conversamos contigo</strong><span>Te escribimos por WhatsApp para coordinar el diagnóstico.</span></li>
+            <li><strong>Te recomendamos la solución</strong><span>Conferencia, programa, taller, proceso o automatización, según lo que necesite tu organización.</span></li>
+          </ol>
+        </div>
+
+        <form class="request diag-form" id="diag-form" novalidate>
+          <h2 class="diag-form-title">Cuéntanos sobre tu organización</h2>
+          <div class="field">
+            <label for="d-nombre">Nombre completo</label>
+            <input id="d-nombre" name="nombre" autocomplete="name" required aria-describedby="d-nombre-err">
+            <p class="field-err" id="d-nombre-err" hidden>Escribe tu nombre.</p>
+          </div>
+          <div class="field">
+            <label for="d-org">Organización</label>
+            <input id="d-org" name="organizacion" autocomplete="organization" required aria-describedby="d-org-err">
+            <p class="field-err" id="d-org-err" hidden>Escribe el nombre de tu organización.</p>
+          </div>
+          <div class="field">
+            <label for="d-interes">¿Qué te interesa?</label>
+            <select id="d-interes" name="interes">
+              <option value="">Aún no lo sé, quiero una recomendación</option>
+              <option value="automatizacion">Automatización e Inteligencia Dirigida®</option>
+              <option value="conferencias">Conferencias de Alto Impacto</option>
+              <option value="programas">Programas de Desarrollo Ejecutivo</option>
+              <option value="talleres">Talleres de Transformación</option>
+              <option value="procesos">Procesos de Transformación Organizacional</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="d-msg">Tu desafío <span class="opt">(opcional)</span></label>
+            <textarea id="d-msg" name="mensaje" rows="3" placeholder="Por ejemplo: queremos fortalecer el liderazgo de nuestros supervisores"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Continuar en WhatsApp</button>
+          <p class="diag-note">Se abre WhatsApp con tu mensaje listo para enviar al +504 8982-6424.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+<!-- include:footer -->
+</body>
+</html>

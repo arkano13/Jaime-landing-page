@@ -440,3 +440,17 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
   .mega-featured { background: rgba(255, 255, 255, .08); }
   .mega-featured strong { color: var(--blanco) !important; }
 }
+
+/* Página de diagnóstico */
+.diag { padding: 64px 0 96px; }
+.diag-grid { display: grid; grid-template-columns: 1fr .9fr; gap: 64px; align-items: start; }
+.diag-steps { list-style: none; margin: 36px 0 0; padding: 0; counter-reset: d; }
+.diag-steps li { counter-increment: d; position: relative; padding: 0 0 26px 56px; display: grid; gap: 2px; }
+.diag-steps li::before { content: counter(d); position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--turquesa); display: grid; place-items: center; font-weight: 700; color: var(--blanco); }
+.diag-steps li:not(:last-child)::after { content: ""; position: absolute; left: 18px; top: 44px; bottom: 6px; width: 2px; background: var(--line-dark); }
+.diag-steps strong { color: var(--blanco); font-weight: 600; }
+.diag-steps span { color: var(--on-dark); font-size: .9375rem; }
+.diag-form-title { font-size: 1.25rem; text-transform: none; color: var(--petroleo) !important; margin-bottom: 4px; }
+.diag-form .btn { justify-self: stretch; }
+.diag-note { margin: 0; font-size: .875rem; color: var(--texto-2); text-align: center; }
+@media (max-width: 900px) { .diag-grid { grid-template-columns: 1fr; gap: 40px; } .diag { padding: 40px 0 64px; } }
