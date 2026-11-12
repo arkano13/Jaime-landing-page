@@ -41,8 +41,10 @@ createServer(async (req, res) => {
   const { pathname, searchParams } = new URL(req.url, 'http://localhost');
   const file = await resolveFile(pathname);
   if (!file) {
-    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end('<!doctype html><meta charset="utf-8"><title>Página no encontrada</title><p>Página no encontrada. <a href="/">Volver al inicio</a></p>');
+    let body = '<!doctype html><meta charset="utf-8"><title>Página no encontrada</title><p>Página no encontrada. <a href="/">Volver al inicio</a></p>';
+    try { body = await readFile(join(dist, '404.html')); } catch {}
+    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' });
+    res.end(body);
     return;
   }
   const ext = extname(file).toLowerCase();

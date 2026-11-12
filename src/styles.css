@@ -505,3 +505,13 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .footer-social svg, .topbar-ig svg { width: 18px; height: 18px; flex: none; }
 .topbar-ig { display: inline-flex; vertical-align: middle; margin-right: 12px; }
 .topbar-ig:hover { color: var(--turquesa); }
+
+/* Página 404 */
+.err { min-height: calc(100dvh - var(--header-h) - 40px); display: flex; align-items: center; padding: 72px 0; }
+.err-inner { text-align: center; display: grid; justify-items: center; }
+.err-code { margin: 0 0 8px; font-size: clamp(5rem, 14vw, 9rem); font-weight: 700; line-height: 1; color: transparent; -webkit-text-stroke: 2px var(--turquesa); }
+.err .hero-lead { margin-inline: auto; }
+.err .hero-actions { justify-content: center; }
+.err-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line-dark); }
+.err-links a { color: var(--on-dark); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.err-links a:hover { color: var(--blanco); text-decoration: underline; text-decoration-color: var(--turquesa); }
