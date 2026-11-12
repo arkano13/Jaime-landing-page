@@ -431,6 +431,5 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .engine-list .tab-featured[aria-selected="true"] { color: var(--rojo); box-shadow: inset 3px 0 0 var(--rojo); }
 .tab-badge { display: inline-block; margin-left: 10px; padding: 2px 10px; border-radius: 99px; background: var(--rojo); color: var(--blanco); font-size: .75rem; font-style: normal; font-weight: 700; letter-spacing: .04em; vertical-align: middle; }
 .engine-panel--featured { border-top: 4px solid var(--rojo); }
-.mega-featured strong { color: var(--rojo) !important; }
 @media (min-width: 1101px) { .topic-bar { grid-template-columns: repeat(var(--cols, 8), 1fr); } }
 .auto-grid--light h2 { color: var(--petroleo); }
