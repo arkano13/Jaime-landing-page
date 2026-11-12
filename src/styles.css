@@ -404,7 +404,7 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 /* Par de fotos en "¿Por qué BLC?" */
 .photo-pair { display: grid; grid-template-columns: 1.7fr 1fr; gap: 20px; margin-bottom: 28px; }
 .photo-pair .photo-slot { height: 420px; }
-.photo-slot img[src*="sesion-liderazgo"] { object-position: 45% 50%; }
+.photo-slot img[src*="sesion-liderazgo"] { object-position: 50% 50%; }
 .photo-slot img[src*="taller-equipo"] { object-position: 60% 55%; }
 .photo-slot img[src*="sesion-sala"] { object-position: 50% 60%; }
 .photo-slot img[src*="jaime-perfil"] { object-position: 75% 20%; }
