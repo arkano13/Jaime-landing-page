@@ -484,3 +484,5 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .conf-detail .conf-ideal strong { color: var(--petroleo); }
 @media (prefers-reduced-motion: no-preference) { .conf-item[open] .conf-detail { animation: rise .25s ease-out both; } }
 @media (max-width: 600px) { .conf-detail { padding-left: 0; } .conf-item summary { gap: 14px; } }
+.diag-h { font-size: clamp(2rem, 3.4vw, 2.9rem); color: var(--blanco); line-height: 1.1; }
+.diag .diag-form-title { font-size: 1.25rem; }

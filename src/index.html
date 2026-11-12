@@ -57,7 +57,7 @@
             </li>
           </ul>
           <div class="hero-actions">
-            <a href="/diagnostico" class="btn btn-primary">Diagnóstico gratuito</a>
+            <a href="#diagnostico" class="btn btn-primary">Diagnóstico gratuito</a>
             <a href="#soluciones" class="btn btn-outline-light">Ver soluciones</a>
           </div>
         </div>
@@ -265,7 +265,7 @@
         </ol>
         <div class="path-cta">
           <p><strong>Empieza aquí:</strong> el diagnóstico es gratuito.</p>
-          <a class="btn btn-primary" href="/diagnostico">Agendar diagnóstico</a>
+          <a class="btn btn-primary" href="#diagnostico">Agendar diagnóstico</a>
         </div>
       </div>
     </section>
@@ -366,14 +366,50 @@
       </div>
     </section>
 
-    <!-- CIERRE -->
-    <section class="cta-band">
-      <div class="container cta-band-inner">
-        <div>
-          <h2>Agenda tu diagnóstico gratuito</h2>
-          <p>Cuéntanos el desafío de tu organización y definimos juntos la solución que realmente necesita.</p>
+    <!-- CIERRE: diagnóstico -->
+    <section id="diagnostico" class="hero hero--dark diag">
+      <div class="container diag-grid">
+        <div class="hero-copy">
+          <p class="kicker">Diagnóstico gratuito</p>
+          <h2 class="diag-h">Agenda tu diagnóstico gratuito</h2>
+          <p class="hero-lead">Primero comprendemos la realidad de tu organización; después recomendamos la solución que realmente necesita.</p>
+          <ol class="diag-steps">
+            <li><strong>Nos cuentas tu desafío</strong><span>Completa el formulario: toma menos de un minuto.</span></li>
+            <li><strong>Conversamos contigo</strong><span>Te escribimos por WhatsApp para coordinar el diagnóstico.</span></li>
+            <li><strong>Te recomendamos la solución</strong><span>Conferencia, programa, taller, proceso o automatización, según lo que necesite tu organización.</span></li>
+          </ol>
         </div>
-        <a class="btn btn-primary" href="/diagnostico">Agendar diagnóstico</a>
+
+        <form class="request diag-form" id="diag-form" novalidate>
+          <h2 class="diag-form-title">Cuéntanos sobre tu organización</h2>
+          <div class="field">
+            <label for="d-nombre">Nombre completo</label>
+            <input id="d-nombre" name="nombre" autocomplete="name" required aria-describedby="d-nombre-err">
+            <p class="field-err" id="d-nombre-err" hidden>Escribe tu nombre.</p>
+          </div>
+          <div class="field">
+            <label for="d-org">Organización</label>
+            <input id="d-org" name="organizacion" autocomplete="organization" required aria-describedby="d-org-err">
+            <p class="field-err" id="d-org-err" hidden>Escribe el nombre de tu organización.</p>
+          </div>
+          <div class="field">
+            <label for="d-interes">¿Qué te interesa?</label>
+            <select id="d-interes" name="interes">
+              <option value="">Aún no lo sé, quiero una recomendación</option>
+              <option value="automatizacion">Automatización e Inteligencia Dirigida®</option>
+              <option value="conferencias">Conferencias de Alto Impacto</option>
+              <option value="programas">Programas de Desarrollo Ejecutivo</option>
+              <option value="talleres">Talleres de Transformación</option>
+              <option value="procesos">Procesos de Transformación Organizacional</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="d-msg">Tu desafío <span class="opt">(opcional)</span></label>
+            <textarea id="d-msg" name="mensaje" rows="3" placeholder="Por ejemplo: queremos fortalecer el liderazgo de nuestros supervisores"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Continuar en WhatsApp</button>
+          <p class="diag-note">Se abre WhatsApp con tu mensaje listo para enviar al +504 8982-6424.</p>
+        </form>
       </div>
     </section>
   </main>
