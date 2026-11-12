@@ -535,3 +535,9 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .video-copy .btn { margin-top: 8px; }
 .photo-slot img[src*="automatizacion-detalle"] { object-position: 72% 40%; }
 .footer-col .btn { white-space: nowrap; padding: 0 16px; }
+
+/* Videos dentro de los recuadros de foto (Automatización) */
+.photo-slot .media-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero-media--video { aspect-ratio: 4 / 5; max-height: 640px; justify-self: center; width: 100%; max-width: 520px; }
+.video-badge { position: absolute; top: 14px; left: 14px; z-index: 1; padding: 6px 12px; border-radius: 99px; background: rgba(2, 76, 105, .9); color: var(--blanco); font-size: .75rem; font-weight: 600; }
+.photo-slot:has(.media-video) { border-style: solid; }
