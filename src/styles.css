@@ -530,3 +530,8 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .btn-sm { font-size: 1.1875rem; font-weight: 700; }
 /* Turquesa sobre blanco no llega a 4.5:1: los números de las listas van en azul petróleo */
 .numbered .num, .conf-item summary .num { color: var(--petroleo); }
+.section-dark .video-card figcaption { color: var(--blanco); }
+.video-note { font-size: .875rem; color: var(--on-dark); opacity: .85; }
+.video-copy .btn { margin-top: 8px; }
+.photo-slot img[src*="automatizacion-detalle"] { object-position: 72% 40%; }
+.footer-col .btn { white-space: nowrap; padding: 0 16px; }

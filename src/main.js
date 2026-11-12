@@ -144,3 +144,17 @@ if (diag) {
     if (e.target.getAttribute('aria-invalid') === 'true' && e.target.value.trim()) showErr(e.target, false);
   });
 }
+
+// Videos ilustrativos: se reproducen en silencio solo cuando están en pantalla
+const autoVideos = document.querySelectorAll('.auto-video');
+if (autoVideos.length) {
+  if (reduceMotion) {
+    autoVideos.forEach(v => v.setAttribute('controls', ''));
+  } else {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) e.target.play().catch(() => e.target.setAttribute('controls', ''));
+      else e.target.pause();
+    }), { threshold: 0.4 });
+    autoVideos.forEach(v => io.observe(v));
+  }
+}
