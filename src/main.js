@@ -120,7 +120,8 @@ if (diag) {
   const pre = new URLSearchParams(location.search).get('solucion');
   if (pre && [...f.interes.options].some(o => o.value === pre)) f.interes.value = pre;
   const tema = new URLSearchParams(location.search).get('tema');
-  if (tema) f.mensaje.value = `Me interesa la conferencia "${tema}".`;
+  const tipos = { conferencias: 'la conferencia', programas: 'el programa', talleres: 'el taller', procesos: 'el proceso', automatizacion: 'la dimensión' };
+  if (tema) f.mensaje.value = `Me interesa ${tipos[pre] || ''} "${tema}".`.replace('  ', ' ');
   const showErr = (input, bad) => {
     input.setAttribute('aria-invalid', bad);
     document.getElementById(input.getAttribute('aria-describedby')).hidden = !bad;
