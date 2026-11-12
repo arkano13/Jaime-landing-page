@@ -43,4 +43,4 @@ Mientras no existan, se ve un recuadro que indica qué foto va.
 
 ## Pendiente
 
-Testimonios reales, usuario de Instagram, link de compra de conferencias y dominio.
+Testimonios adicionales, link de compra de conferencias y dominio.
