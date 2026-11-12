@@ -515,3 +515,12 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .err-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line-dark); }
 .err-links a { color: var(--on-dark); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
 .err-links a:hover { color: var(--blanco); text-decoration: underline; text-decoration-color: var(--turquesa); }
+
+/* Política de privacidad */
+.legal-inner { max-width: 760px; }
+.legal h1 { font-size: clamp(2rem, 3.6vw, 2.75rem); }
+.legal-date { color: var(--texto-2); font-size: .9375rem; margin-bottom: 32px; }
+.legal h2 { font-size: 1.25rem; text-transform: none; margin: 32px 0 8px; }
+.legal p { color: var(--texto); }
+.footer-bottom a { color: var(--on-dark); }
+.footer-bottom a:hover { color: var(--blanco); }
