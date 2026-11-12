@@ -130,12 +130,12 @@ if (request) {
     const first = missing[0] || (emailBad ? f.correo : null);
     if (first) { first.focus(); return; }
     const lines = [
-      'Hola, quiero solicitar una conferencia con Building Leaders Company.',
+      `Hola, quiero solicitar ${request.dataset.kind || 'una conferencia'} con Building Leaders Company.`,
       `Nombre: ${f.nombre.value.trim()}`,
       `Organización: ${f.organizacion.value.trim()}`,
       f.correo.value.trim() && `Correo: ${f.correo.value.trim()}`,
       f.telefono.value.trim() && `Teléfono: ${f.telefono.value.trim()}`,
-      `Conferencia: ${f.conferencia.value}`,
+      `${request.dataset.label || 'Conferencia'}: ${f.conferencia.value}`,
       f.fecha.value && `Fecha del evento: ${f.fecha.value}`,
       f.lugar.value.trim() && `Lugar: ${f.lugar.value.trim()}`,
       `Modalidad: ${f.modalidad.value}`,
