@@ -438,3 +438,4 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .photo-slot img[src*="procesos-portada"] { object-position: 50% 60%; }
 .photo-slot img[src*="procesos-detalle"] { object-position: 35% 40%; }
 .photo-slot img[src*="talleres-portada"] { object-position: 50% 60%; }
+.photo-slot img[src*="talleres-detalle"] { object-position: 50% 65%; }
