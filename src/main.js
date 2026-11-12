@@ -119,6 +119,8 @@ if (diag) {
   const f = diag.elements;
   const pre = new URLSearchParams(location.search).get('solucion');
   if (pre && [...f.interes.options].some(o => o.value === pre)) f.interes.value = pre;
+  const tema = new URLSearchParams(location.search).get('tema');
+  if (tema) f.mensaje.value = `Me interesa la conferencia "${tema}".`;
   const showErr = (input, bad) => {
     input.setAttribute('aria-invalid', bad);
     document.getElementById(input.getAttribute('aria-describedby')).hidden = !bad;

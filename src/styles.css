@@ -462,3 +462,25 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .cred-row--logos img[src*="maxwell"] { height: 64px; margin: 14px 0; }
 .cred-row--logos span { font-size: .875rem; font-weight: 500; color: var(--texto-2); max-width: 22ch; }
 @media (max-width: 600px) { .cred-row--logos li { flex-basis: 40%; } .cred-row--logos img { height: 56px; } .cred-row--logos img[src*="maxwell"] { height: 40px; margin: 8px 0; } }
+
+/* Conferencias desplegables */
+.numbered--details li { display: block; padding: 0; }
+.conf-item summary { list-style: none; display: flex; align-items: baseline; gap: 24px; padding: 22px 0; cursor: pointer; }
+.conf-item summary::-webkit-details-marker { display: none; }
+.conf-item summary h3 { flex: 1; transition: color var(--fast) ease-out; }
+.conf-item summary:hover h3 { color: #013A51; text-decoration: underline; text-decoration-color: var(--turquesa); text-decoration-thickness: 2px; text-underline-offset: .2em; }
+.conf-toggle { flex: 0 0 32px; height: 32px; align-self: center; border-radius: 50%; border: 2px solid var(--petroleo); position: relative; transition: transform var(--base) ease-out, background-color var(--fast) ease-out; }
+.conf-toggle::before, .conf-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; background: var(--petroleo); transform: translate(-50%, -50%); }
+.conf-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+.conf-item[open] .conf-toggle { transform: rotate(45deg); background: var(--gris-azulado); }
+.conf-detail { padding: 0 0 28px 48px; }
+.conf-detail p { color: var(--texto-2); }
+.conf-detail .conf-sub { font-weight: 600; color: var(--petroleo); font-size: 1.0625rem; }
+.conf-detail-h { font-weight: 600; color: var(--petroleo) !important; margin-bottom: 6px; }
+.conf-detail ul { list-style: none; margin: 0 0 18px; padding: 0; }
+.conf-detail ul li { position: relative; padding: 5px 0 5px 20px; border: 0; }
+.conf-detail ul li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--turquesa); }
+.conf-detail .conf-ideal { font-size: .9375rem; padding-top: 14px; border-top: 1px solid var(--crema-oscuro); }
+.conf-detail .conf-ideal strong { color: var(--petroleo); }
+@media (prefers-reduced-motion: no-preference) { .conf-item[open] .conf-detail { animation: rise .25s ease-out both; } }
+@media (max-width: 600px) { .conf-detail { padding-left: 0; } .conf-item summary { gap: 14px; } }
