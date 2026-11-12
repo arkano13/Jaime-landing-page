@@ -425,12 +425,10 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 @media (max-width: 900px) { .video-section { grid-template-columns: 1fr; gap: 32px; } }
 .photo-slot img[src*="conferencia-portada"] { object-position: 50% 45%; }
 
-/* Automatización destacada en Soluciones */
-.engine-list .tab-featured { color: var(--rojo); font-weight: 700; }
-.engine-list .tab-featured .num { color: var(--rojo); }
-.engine-list .tab-featured[aria-selected="true"] { color: var(--rojo); box-shadow: inset 3px 0 0 var(--rojo); }
-.tab-badge { display: inline-block; margin-left: 10px; padding: 2px 10px; border-radius: 99px; background: var(--rojo); color: var(--blanco); font-size: .75rem; font-style: normal; font-weight: 700; letter-spacing: .04em; vertical-align: middle; }
-.engine-panel--featured { border-top: 4px solid var(--rojo); }
+/* Automatización destacada en el menú Soluciones */
+.mega-featured { grid-column: 1 / -1; background: rgba(255, 0, 0, .05); }
+.mega-featured strong { color: var(--rojo) !important; }
+.mega-featured strong::after { content: "Destacado"; margin-left: 10px; padding: 2px 10px; border-radius: 99px; background: var(--rojo); color: var(--blanco); font-size: .6875rem; font-weight: 700; vertical-align: middle; }
 @media (min-width: 1101px) { .topic-bar { grid-template-columns: repeat(var(--cols, 8), 1fr); } }
 .auto-grid--light h2 { color: var(--petroleo); }
 .photo-slot img[src*="programas-portada"] { object-position: 50% 55%; }
@@ -439,3 +437,7 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .photo-slot img[src*="procesos-detalle"] { object-position: 35% 40%; }
 .photo-slot img[src*="talleres-portada"] { object-position: 50% 60%; }
 .photo-slot img[src*="talleres-detalle"] { object-position: 50% 65%; }
+@media (max-width: 960px) {
+  .mega-featured { background: rgba(255, 255, 255, .08); }
+  .mega-featured strong { color: var(--blanco) !important; }
+}
