@@ -109,8 +109,32 @@ if (carousel) {
     const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
     carousel.scrollBy({ left: dir * (card.offsetWidth + gap), behavior: reduceMotion ? 'auto' : 'smooth' });
   };
-  document.querySelector('[data-carousel-prev]').addEventListener('click', () => step(-1));
-  document.querySelector('[data-carousel-next]').addEventListener('click', () => step(1));
+  // Avanza al siguiente; al final vuelve al primero
+  const advance = () => {
+    const atEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 8;
+    if (atEnd) carousel.scrollTo({ left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    else step(1);
+  };
+  document.querySelector('[data-carousel-prev]').addEventListener('click', () => { step(-1); restart(); });
+  document.querySelector('[data-carousel-next]').addEventListener('click', () => { advance(); restart(); });
+
+  // Giro automático cada 7 s: se detiene al pasar el mouse, con el foco dentro,
+  // fuera de pantalla, con la pestaña oculta o mientras se reproduce un video
+  let timer = null, visible = false, hovering = false;
+  const playing = () => [...carousel.querySelectorAll('video')].some(v => !v.paused);
+  const canRun = () => !reduceMotion && visible && !hovering && !carousel.contains(document.activeElement) && !document.hidden && !playing();
+  function restart() {
+    clearInterval(timer);
+    timer = canRun() ? setInterval(() => { if (canRun()) advance(); }, 7000) : null;
+  }
+  carousel.addEventListener('mouseenter', () => { hovering = true; restart(); });
+  carousel.addEventListener('mouseleave', () => { hovering = false; restart(); });
+  carousel.addEventListener('focusin', restart);
+  carousel.addEventListener('focusout', () => setTimeout(restart, 0));
+  carousel.addEventListener('play', restart, true);
+  carousel.addEventListener('pause', restart, true);
+  document.addEventListener('visibilitychange', restart);
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; restart(); }, { threshold: 0.3 }).observe(carousel);
 }
 
 // Formulario único de diagnóstico: preselecciona la solución (?solucion=) y abre WhatsApp

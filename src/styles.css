@@ -541,3 +541,15 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .hero-media--video { aspect-ratio: 4 / 5; max-height: 640px; justify-self: center; width: 100%; max-width: 520px; }
 .video-badge { position: absolute; top: 14px; left: 14px; z-index: 1; padding: 6px 12px; border-radius: 99px; background: rgba(2, 76, 105, .9); color: var(--blanco); font-size: .75rem; font-weight: 600; }
 .photo-slot:has(.media-video) { border-style: solid; }
+
+/* Testimonio en video dentro del carrusel */
+.quote-video { margin: 12px 0 20px; border-radius: var(--radius-sm); overflow: hidden; background: var(--petroleo); }
+.quote-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9.5; object-fit: cover; }
+.quote--video .quote-who { margin-top: auto; }
+
+/* Compra en Hotmart */
+.conf-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
+.pay-note { margin-top: 12px; font-size: .875rem; color: var(--texto-2); }
+.cta-pay { margin-top: 0; }
+.text-link--light { color: var(--blanco); }
+.engine-panel .panel-actions { gap: 12px 28px; }
