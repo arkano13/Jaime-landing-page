@@ -553,3 +553,4 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .cta-pay { margin-top: 0; }
 .text-link--light { color: var(--blanco); }
 .engine-panel .panel-actions { gap: 12px 28px; }
+.auto-side-video { aspect-ratio: 16 / 9; margin-top: 32px; }
