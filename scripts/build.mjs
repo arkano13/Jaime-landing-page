@@ -17,6 +17,26 @@ const withVersions = html => html
   .replace('href="/styles.css"', `href="/styles.css?v=${assetVersions['/styles.css']}"`)
   .replace('src="/main.js"', `src="/main.js?v=${assetVersions['/main.js']}"`);
 
+// Dominio público: enlaces canónicos, vista previa al compartir y mapa del sitio para Google
+const SITE = 'https://blcleaders.com';
+const OG_IMAGE = `${SITE}/assets/og-blc.jpg`;
+const pathOf = page => (page === 'index' ? '/' : `/${page}`);
+const withSeo = (html, page) => {
+  const url = SITE + pathOf(page);
+  const tags = [
+    page === '404' ? '' : `<link rel="canonical" href="${url}">`,
+    page === '404' ? '' : `<meta property="og:url" content="${url}">`,
+    `<meta property="og:image" content="${OG_IMAGE}">`,
+    '<meta property="og:image:width" content="1200">',
+    '<meta property="og:image:height" content="630">',
+    '<meta property="og:image:alt" content="Building Leaders Company: Fortalecemos líderes. Transformamos organizaciones.">',
+    '<meta name="twitter:card" content="summary_large_image">',
+    `<meta name="twitter:image" content="${OG_IMAGE}">`,
+  ].filter(Boolean).join('\n  ');
+  return html.replace('<meta name="twitter:card" content="summary">', tags);
+};
+const indexable = [];
+
 const header = partial('header');
 const footer = partial('footer');
 
@@ -31,9 +51,19 @@ for (const entry of readdirSync(src, { withFileTypes: true })) {
     const html = readFileSync(from, 'utf8')
       .replace('<!-- include:header -->', header.replace(`data-page="${page}"`, `data-page="${page}" aria-current="page"`))
       .replace('<!-- include:footer -->', footer);
-    writeFileSync(join(dist, entry.name), withVersions(html));
+    writeFileSync(join(dist, entry.name), withVersions(withSeo(html, page)));
+    if (!html.includes('name="robots" content="noindex"')) indexable.push(page);
   } else {
     cpSync(from, join(dist, entry.name), { recursive: true });
   }
 }
+
+const today = new Date().toISOString().slice(0, 10);
+const order = p => (p === 'index' ? 0 : p === 'privacidad' ? 2 : 1);
+writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${indexable.sort((a, b) => order(a) - order(b) || a.localeCompare(b)).map(p => `  <url><loc>${SITE}${pathOf(p)}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+</urlset>
+`);
+writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log('Sitio generado en dist/');
