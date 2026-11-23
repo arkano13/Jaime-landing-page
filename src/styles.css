@@ -617,3 +617,4 @@ a { color: var(--petroleo); text-underline-offset: .2em; }
 .profile-slide { min-width: 0; }
 .profile-slide > * { min-width: 0; }
 @media (max-width: 900px) { .profile-slide { grid-template-columns: minmax(0, 1fr); } .profile-slide .photo-slot--portrait { max-width: 420px; width: 100%; justify-self: center; } }
+.photo-slot img[src*="lesly-nolasco"] { object-position: 50% 20%; }
