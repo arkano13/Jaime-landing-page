@@ -118,14 +118,14 @@ if (carousel) {
   document.querySelector('[data-carousel-prev]').addEventListener('click', () => { step(-1); restart(); });
   document.querySelector('[data-carousel-next]').addEventListener('click', () => { advance(); restart(); });
 
-  // Giro automático cada 7 s: se detiene al pasar el mouse, con el foco dentro,
+  // Giro automático (7 s por defecto, o data-carousel-interval): se detiene al pasar el mouse, con el foco dentro,
   // fuera de pantalla, con la pestaña oculta o mientras se reproduce un video
   let timer = null, visible = false, hovering = false;
   const playing = () => [...carousel.querySelectorAll('video')].some(v => !v.paused);
   const canRun = () => !reduceMotion && visible && !hovering && !carousel.contains(document.activeElement) && !document.hidden && !playing();
   function restart() {
     clearInterval(timer);
-    timer = canRun() ? setInterval(() => { if (canRun()) advance(); }, 7000) : null;
+    timer = canRun() ? setInterval(() => { if (canRun()) advance(); }, Number(carousel.dataset.carouselInterval) || 7000) : null;
   }
   carousel.addEventListener('mouseenter', () => { hovering = true; restart(); });
   carousel.addEventListener('mouseleave', () => { hovering = false; restart(); });
