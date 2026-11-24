@@ -14,6 +14,25 @@ document.querySelectorAll('[data-wa], [data-wa-float]').forEach(a => {
   a.rel = 'noopener';
 });
 
+// Medición (Google Analytics): clics en WhatsApp, Hotmart, Amazon, Instagram y correo
+const track = (name, params = {}) => { if (typeof gtag === 'function') gtag('event', name, { transport_type: 'beacon', ...params }); };
+const linkEvents = [
+  ['wa.me/', 'click_whatsapp'],
+  ['pay.hotmart.com', 'click_hotmart'],
+  ['a.co/', 'click_amazon'],
+  ['amazon.', 'click_amazon'],
+  ['instagram.com', 'click_instagram'],
+  ['mailto:', 'click_correo']
+];
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href]');
+  if (!a) return;
+  const hit = linkEvents.find(([part]) => a.href.includes(part));
+  if (!hit) return;
+  const ubicacion = a.matches('[data-wa-float]') ? 'flotante' : a.closest('footer') ? 'pie' : a.closest('header') ? 'encabezado' : 'contenido';
+  track(hit[1], { ubicacion, boton: a.textContent.trim().replace(/\s+/g, ' ').slice(0, 60), pagina: location.pathname });
+});
+
 // Menú móvil
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.getElementById('nav');
@@ -162,6 +181,7 @@ if (diag) {
       `Me interesa: ${interes}`,
       f.mensaje.value.trim() && `Desafío: ${f.mensaje.value.trim()}`
     ].filter(Boolean);
+    track('generate_lead', { solucion: f.interes.value || 'recomendacion', pagina: location.pathname });
     window.open(waLink(lines.join('\n')), '_blank', 'noopener');
   });
   diag.addEventListener('input', e => {
