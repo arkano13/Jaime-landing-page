@@ -35,6 +35,14 @@ const withSeo = (html, page) => {
   ].filter(Boolean).join('\n  ');
   return html.replace('<meta name="twitter:card" content="summary">', tags);
 };
+// Etiqueta de Google (Analytics), tal como la entrega Google: va justo después de <head>
+const GOOGLE_TAG = `<head>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KPMVMGKN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>`;
 const indexable = [];
 
 const header = partial('header');
@@ -51,7 +59,7 @@ for (const entry of readdirSync(src, { withFileTypes: true })) {
     const html = readFileSync(from, 'utf8')
       .replace('<!-- include:header -->', header.replace(`data-page="${page}"`, `data-page="${page}" aria-current="page"`))
       .replace('<!-- include:footer -->', footer);
-    writeFileSync(join(dist, entry.name), withVersions(withSeo(html, page)));
+    writeFileSync(join(dist, entry.name), withVersions(withSeo(html, page)).replace('<head>', GOOGLE_TAG));
     if (!html.includes('name="robots" content="noindex"')) indexable.push(page);
   } else {
     cpSync(from, join(dist, entry.name), { recursive: true });
