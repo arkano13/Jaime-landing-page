@@ -35,13 +35,14 @@ const withSeo = (html, page) => {
   ].filter(Boolean).join('\n  ');
   return html.replace('<meta name="twitter:card" content="summary">', tags);
 };
-// Etiqueta de Google (Analytics), tal como la entrega Google: va justo después de <head>
+// Google Analytics 4 (ID de medición del flujo "BLC"): va justo después de <head>
 const GOOGLE_TAG = `<head>
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KPMVMGKN"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X9QRPJ9RP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'G-9X9QRPJ9RP');
   </script>`;
 const indexable = [];
 
